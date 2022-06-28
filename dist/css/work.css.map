@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../../src/work/work.scss"
+    ],
+    "names": [],
+    "file": "work.css"
+}
