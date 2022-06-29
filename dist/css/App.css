@@ -17,4 +17,10 @@
 .app .sections::-webkit-scrollbar {
   display: none;
 }
+
+.app .sections > * {
+  width: 100vw;
+  height: calc(100vh - 70px);
+  scroll-snap-align: start;
+}
 /*# sourceMappingURL=App.css.map */

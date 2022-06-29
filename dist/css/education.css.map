@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAAA,UAAU,CAAC;EACV,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,IAAI;EACX,gBAAgB,EAAE,UAAU;CAC5B",
     "sources": [
         "../../src/education/education.scss"
     ],

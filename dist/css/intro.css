@@ -1,1 +1,14 @@
-/* No CSS *//*# sourceMappingURL=intro.css.map */
+.intro {
+  height: 100vh;
+  width: 100%;
+  background-color: #44340c;
+}
+
+.intro .intro-container {
+  height: 100%;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  background-color: #41310e;
+}
+/*# sourceMappingURL=intro.css.map */

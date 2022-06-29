@@ -1,7 +1,8 @@
 import React from 'react';
+import './work.scss';
 
 function Work() {
-	return <div></div>;
+	return <section className='work' id='work'></section>;
 }
 
 export default Work;
