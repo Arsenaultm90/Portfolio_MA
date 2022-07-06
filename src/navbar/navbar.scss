@@ -24,15 +24,14 @@
 			height: 100%;
 			width: 100%;
 
-			.resume-btn {
+			.start-btn {
 				display: flex;
 				align-items: center;
 				justify-content: center;
 				height: 22px;
 				width: 60px;
 				margin: 0 0 2px 5px;
-				color: black;
-				background-color: transparent;
+				background-color: #c0c0c0;
 				border: none;
 				box-shadow: inset 0.1em 0.1em 0em 0 rgba(255, 255, 255, 0.5),
 					inset -0.1em -0.1em 0em 0 rgba(0, 0, 0, 0.8);

@@ -1,6 +1,6 @@
 import Navbar from './navbar/Navbar';
 import Menu from './menu/Menu';
-import Intro from './intro/Intro';
+import Dashboard from './dashboard/Dashboard';
 import Work from './work/Work';
 import Education from './education/Education';
 import Contact from './contact/Contact';
@@ -9,13 +9,25 @@ import { useState } from 'react';
 
 function App() {
 	const [menuOpen, setMenuOpen] = useState(false);
+	const [btnState, setBtnState] = useState(false);
 	return (
 		<div className='app'>
 			<div className='sections'>
-				<Intro />
+				<Dashboard />
+				<Work />
 			</div>
-			<Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-			<Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+			<Navbar
+				menuOpen={menuOpen}
+				setMenuOpen={setMenuOpen}
+				btnState={btnState}
+				setBtnState={setBtnState}
+			/>
+			<Menu
+				menuOpen={menuOpen}
+				setMenuOpen={setMenuOpen}
+				btnState={btnState}
+				setBtnState={setBtnState}
+			/>
 		</div>
 	);
 }

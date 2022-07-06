@@ -1,10 +1,15 @@
-import React from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './navbar.scss';
 import { BsFillTelephoneFill } from 'react-icons/bs';
 import { IoMdMail } from 'react-icons/io';
 import { startBtn } from '../images';
 
-export default function Navbar({ menuOpen, setMenuOpen }) {
+export default function Navbar({
+	menuOpen,
+	setMenuOpen,
+	btnState,
+	setBtnState,
+}) {
 	return (
 		<>
 			<div className='navbar'>
@@ -12,14 +17,15 @@ export default function Navbar({ menuOpen, setMenuOpen }) {
 					<div className='left-side'>
 						<div className='links'>
 							<button
-								className={'resume-btn ' + (menuOpen && 'active')}
+								className={'start-btn ' + (menuOpen && 'active')}
 								onClick={() => {
-									if (menuOpen) {
-										setMenuOpen(false);
-										console.log('setting false');
-									} else {
+									console.log(btnState);
+									if (!btnState) {
 										setMenuOpen(true);
-										console.log('setting true');
+										setBtnState(true);
+									} else {
+										setMenuOpen(false);
+										setBtnState(false);
 									}
 								}}
 							>

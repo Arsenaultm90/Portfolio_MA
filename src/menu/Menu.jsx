@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import './menu.scss';
 import { blueMenu, resume, contact, education, work, user } from '../images';
 
-export default function Menu({ menuOpen, setMenuOpen }) {
+export default function Menu({ menuOpen, setMenuOpen, btnState, setBtnState }) {
 	useEffect(() => {
 		document.addEventListener('click', handleClickOutside, true);
 	});
