@@ -10,6 +10,11 @@ import resume_highlight from './resume_highlight.png';
 import work_highlight from './work_highlight.png';
 import contact_highlight from './contact_highlight.png';
 import education_highlight from './education_highlight.png';
+import closeBtn from './closeBtn.png';
+import reactIcon from './reactIcon.png';
+import reactIcon_highlight from './reactIcon_highlight.png';
+import jsIcon from './jsIcon.png';
+import nodeIcon from './nodeIcon.png';
 
 export {
 	work,
@@ -24,4 +29,9 @@ export {
 	startBtn,
 	blueMenu,
 	user,
+	closeBtn,
+	reactIcon,
+	reactIcon_highlight,
+	jsIcon,
+	nodeIcon,
 };

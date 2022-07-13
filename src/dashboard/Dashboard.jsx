@@ -11,7 +11,7 @@ import {
 	contact_highlight,
 } from '../images/index';
 
-function Intro() {
+function Intro({ setWinState }) {
 	useEffect(() => {
 		document.addEventListener('click', handleClickOutside, true);
 	});
@@ -29,7 +29,15 @@ function Intro() {
 		}
 	};
 
-	const doubleClickHandler = (e) => {};
+	const doubleClickHandler = (e) => {
+		if (e.currentTarget.id === 'work') {
+			setWinState({ projects: true, education: false, contact: false });
+		} else if (e.currentTarget.id === 'education') {
+			setWinState({ projects: false, education: true, contact: false });
+		} else if (e.currentTarget.id === 'contact') {
+			setWinState({ projects: false, education: false, contact: true });
+		}
+	};
 
 	return (
 		<section className='intro' id='intro'>
@@ -40,6 +48,7 @@ function Intro() {
 					}
 					id='work'
 					onClick={addHighlight}
+					onDoubleClick={doubleClickHandler}
 					ref={refShortcut}
 				>
 					<img src={state.active === 'work' ? work_highlight : work} alt='' />
@@ -53,6 +62,7 @@ function Intro() {
 					}
 					id='education'
 					onClick={addHighlight}
+					onDoubleClick={doubleClickHandler}
 					ref={refShortcut}
 				>
 					<img
@@ -68,6 +78,7 @@ function Intro() {
 					}
 					id='contact'
 					onClick={addHighlight}
+					onDoubleClick={doubleClickHandler}
 					ref={refShortcut}
 				>
 					<img

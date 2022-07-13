@@ -1,6 +1,170 @@
+* {
+  font-family: 'W95FA';
+  font-weight: 100;
+  font-size: 0.9rem;
+  margin: 0;
+  padding: 0;
+}
+
 .work {
-  height: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 80%;
+  width: 60%;
+  max-height: 800px;
+  max-width: 1200px;
+  margin: auto;
+  background-color: #fefeff;
+  -webkit-box-shadow: inset 0.14em 0.14em 0.1em 0 rgba(32, 33, 32, 0.7), inset -0.14em -0.1em 0em 0 #eff1f1;
+          box-shadow: inset 0.14em 0.14em 0.1em 0 rgba(32, 33, 32, 0.7), inset -0.14em -0.1em 0em 0 #eff1f1;
+}
+
+.work.close {
+  display: none;
+}
+
+.work .work-container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%;
   width: 100%;
-  background-color: lightcoral;
+  border: 3px solid #c6c7c7;
+  -webkit-box-shadow: inset 0.14em 0.14em 0.1em 0 rgba(32, 33, 32, 0.7), inset -0.14em -0.1em 0em 0 #eff1f1;
+          box-shadow: inset 0.14em 0.14em 0.1em 0 rgba(32, 33, 32, 0.7), inset -0.14em -0.1em 0em 0 #eff1f1;
+}
+
+.work .work-container .title-bar {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  height: 20px;
+  background: -webkit-gradient(linear, left top, right top, from(#060050), to(#0d89db));
+  background: linear-gradient(90deg, #060050 0%, #0d89db 100%);
+}
+
+.work .work-container .title-bar .left-side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.work .work-container .title-bar .left-side img {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  margin: 0 5px;
+  width: 17px;
+  height: 17px;
+}
+
+.work .work-container .title-bar .left-side h4 {
+  color: white;
+  font-size: 14px;
+}
+
+.work .work-container .title-bar .right-side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.work .work-container .title-bar .right-side button {
+  width: 18px;
+  height: 80%;
+  background-color: #c0c6ca;
+  margin-right: 2px;
+  border: none;
+  margin-left: 5px;
+  -webkit-box-shadow: inset -0.1em -0.1em 0.04em 0 rgba(32, 33, 32, 0.7), inset 0.1em 0.1em 0.1em 0 #eff1f1;
+          box-shadow: inset -0.1em -0.1em 0.04em 0 rgba(32, 33, 32, 0.7), inset 0.1em 0.1em 0.1em 0 #eff1f1;
+}
+
+.work .work-container .title-bar .right-side button img {
+  width: 12px;
+  height: 12px;
+  margin-right: 1px;
+}
+
+.work .work-container .divider {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #c0c6ca;
+  -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);
+}
+
+.work .work-container .content-container {
+  height: 97%;
+  width: 100%;
+  position: relative;
+}
+
+.work .work-container .content-container .link-container {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.work .work-container .content-container .link-container.hide {
+  display: none;
+}
+
+.work .work-container .content-container .link-container .link-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 10px 50px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 20%;
+          flex: 1 0 20%;
+}
+
+.work .work-container .content-container .link-container .link-item.active h4 {
+  background-color: #000181;
+  color: white;
+}
+
+.work .work-container .content-container .link-container .link-item h4 {
+  font-size: 2rem;
+  padding: 3px;
+}
+
+.work .work-container .content-container .link-container .link-item img {
+  width: 100px;
+  height: 100px;
 }
 /*# sourceMappingURL=work.css.map */

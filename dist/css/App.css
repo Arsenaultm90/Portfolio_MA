@@ -4,10 +4,9 @@
 
 .app .sections {
   width: 100%;
-  height: calc(100vh - 70px);
+  height: 100vh;
   background-color: lightsalmon;
   position: relative;
-  top: 70px;
   scroll-behavior: smooth;
   -ms-scroll-snap-type: y mandatory;
       scroll-snap-type: y mandatory;
@@ -16,11 +15,5 @@
 
 .app .sections::-webkit-scrollbar {
   display: none;
-}
-
-.app .sections > * {
-  width: 100vw;
-  height: calc(100vh - 70px);
-  scroll-snap-align: start;
 }
 /*# sourceMappingURL=App.css.map */
