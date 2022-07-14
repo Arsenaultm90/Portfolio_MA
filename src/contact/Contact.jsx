@@ -29,6 +29,7 @@ function Contact({ winState, setWinState }) {
 						<div className='left'></div>
 						<div className='right'>
 							<h4>Contact Me</h4>
+							<p>Phone: 902-432-4145 | Email: Matthew.B.Arsenault@gmail.com</p>
 							<input
 								type='text'
 								className='field'

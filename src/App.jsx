@@ -1,5 +1,4 @@
 import Navbar from './navbar/Navbar';
-import Menu from './menu/Menu';
 import Dashboard from './dashboard/Dashboard';
 import Work from './work/Work';
 import Education from './education/Education';
@@ -20,15 +19,10 @@ function App() {
 			<div className='sections'>
 				<Dashboard winState={winState} setWinState={setWinState} />
 				<Work winState={winState} setWinState={setWinState} />
+				<Education winState={winState} setWinState={setWinState} />
 				<Contact winState={winState} setWinState={setWinState} />
 			</div>
 			<Navbar
-				menuOpen={menuOpen}
-				setMenuOpen={setMenuOpen}
-				btnState={btnState}
-				setBtnState={setBtnState}
-			/>
-			<Menu
 				menuOpen={menuOpen}
 				setMenuOpen={setMenuOpen}
 				btnState={btnState}

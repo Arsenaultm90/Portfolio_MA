@@ -1,23 +1,30 @@
 import { useEffect, useRef } from 'react';
 import './menu.scss';
-import { blueMenu, resume, contact, education, work, user } from '../images';
+import { blueMenu, contact, education, work, user } from '../images';
 
 export default function Menu({
 	menuOpen,
 	setMenuOpen,
 	setWinState,
 	setBtnState,
+	btnEl,
 }) {
 	useEffect(() => {
 		document.addEventListener('click', handleClickOutside, true);
+		return () => {
+			document.removeEventListener('click', handleClickOutside, true);
+		};
 	});
 
 	const refOne = useRef(null);
 
 	const handleClickOutside = (e) => {
-		if (!refOne.current.contains(e.target)) {
+		if (
+			!refOne.current.contains(e.target) &&
+			!btnEl.current.contains(e.target)
+		) {
 			setMenuOpen(false);
-		} else {
+			setBtnState(false);
 		}
 	};
 
@@ -41,7 +48,7 @@ export default function Menu({
 			<ul>
 				<li>
 					<img src={user} alt='' />
-					<a href=''>User</a>
+					<a href='#user'>User</a>
 				</li>
 				<li>
 					<hr className='divider'></hr>

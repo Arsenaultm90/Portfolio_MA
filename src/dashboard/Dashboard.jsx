@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import './dashboard.scss';
+import resumePDF from '../files/MattArsenault_Resume.pdf';
 import {
 	work,
 	education,
@@ -14,6 +15,9 @@ import {
 function Intro({ setWinState }) {
 	useEffect(() => {
 		document.addEventListener('click', handleClickOutside, true);
+		return () => {
+			document.removeEventListener('click', handleClickOutside, true);
+		};
 	});
 	const [state, setState] = useState({ active: '' });
 	const refShortcut = useRef(null);
@@ -25,18 +29,27 @@ function Intro({ setWinState }) {
 
 	const handleClickOutside = (e) => {
 		if (!refShortcut.current.contains(e.target)) {
-			setState(false);
+			setState({ active: '' });
 		}
 	};
 
+	//Open the clicked shortcut window and remove highlight
 	const doubleClickHandler = (e) => {
 		if (e.currentTarget.id === 'work') {
 			setWinState({ projects: true, education: false, contact: false });
+			setState({ active: '' });
 		} else if (e.currentTarget.id === 'education') {
 			setWinState({ projects: false, education: true, contact: false });
+			setState({ active: '' });
 		} else if (e.currentTarget.id === 'contact') {
 			setWinState({ projects: false, education: false, contact: true });
+			setState({ active: '' });
 		}
+	};
+
+	const openResume = () => {
+		window.open(resumePDF, '_blank', 'fullscreen=yes');
+		setState({ active: '' });
 	};
 
 	return (
@@ -94,6 +107,7 @@ function Intro({ setWinState }) {
 					}
 					id='resume'
 					onClick={addHighlight}
+					onDoubleClick={openResume}
 					ref={refShortcut}
 				>
 					<img

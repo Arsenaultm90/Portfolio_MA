@@ -15,6 +15,9 @@ import reactIcon from './reactIcon.png';
 import reactIcon_highlight from './reactIcon_highlight.png';
 import jsIcon from './jsIcon.png';
 import nodeIcon from './nodeIcon.png';
+import udemy from './Udemy.png';
+import camosun from './Camosun.png';
+import nbcc from './NBCC.png';
 
 export {
 	work,
@@ -34,4 +37,7 @@ export {
 	reactIcon_highlight,
 	jsIcon,
 	nodeIcon,
+	udemy,
+	camosun,
+	nbcc,
 };

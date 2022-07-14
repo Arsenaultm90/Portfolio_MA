@@ -16,6 +16,8 @@
   width: 85%;
   max-width: 900px;
   max-height: 475px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .contact.close {
@@ -28,8 +30,7 @@
   width: 100%;
   height: 100%;
   border: 3px solid #c6c7c7;
-  -webkit-box-shadow: inset 0.14em 0.14em 0.1em 0 rgba(32, 33, 32, 0.7), inset -0.14em -0.1em 0em 0 #eff1f1;
-          box-shadow: inset 0.14em 0.14em 0.1em 0 rgba(32, 33, 32, 0.7), inset -0.14em -0.1em 0em 0 #eff1f1;
+  background-color: #c0c6ca;
 }
 
 .contact .contact-container .title-bar {
@@ -147,7 +148,14 @@
 .contact .contact-container .input-container .contact-box .right {
   -ms-grid-column: 2;
       grid-column-start: 2;
-  padding: 2px 40px;
+  padding: 2px 0 2px 40px;
+}
+
+.contact .contact-container .input-container .contact-box .right p {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin: 5px auto;
+  font-size: 1rem;
 }
 
 .contact .contact-container .input-container .contact-box .right h4 {
@@ -181,6 +189,8 @@
   border: none;
   margin-bottom: 15px;
   resize: none;
+  -webkit-box-shadow: inset 0.14em 0.1em 0em 0 rgba(32, 33, 32, 0.7), inset -0.14em -0.1em 0em 0 #eff1f1;
+          box-shadow: inset 0.14em 0.1em 0em 0 rgba(32, 33, 32, 0.7), inset -0.14em -0.1em 0em 0 #eff1f1;
 }
 
 .contact .contact-container .input-container .contact-box .right .field.area {
@@ -188,9 +198,12 @@
 }
 
 .contact .contact-container .input-container .contact-box .right .submit-btn {
-  height: 25px;
-  width: 100px;
-  padding: 0.5rem 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 23px;
+  width: 75px;
+  line-height: 23px;
+  margin: 0.5rem 1rem;
   font-size: 1.1rem;
   cursor: pointer;
   outline: none;
