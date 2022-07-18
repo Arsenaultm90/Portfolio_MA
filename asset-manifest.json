@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Portfolio_MA/src/index.js/static/css/main.da28cfbb.css",
+    "main.js": "/Portfolio_MA/src/index.js/static/js/main.8673c616.js",
+    "static/media/MattArsenault_Resume.pdf": "/Portfolio_MA/src/index.js/static/media/MattArsenault_Resume.5c6a01b4e7e31214745c.pdf",
+    "static/media/Ottawa.png": "/Portfolio_MA/src/index.js/static/media/Ottawa.180fb860b389e57e6dc1.png",
+    "static/media/reactIcon.png": "/Portfolio_MA/src/index.js/static/media/reactIcon.451d8f87a2a66fb34a08.png",
+    "static/media/nodeIcon.png": "/Portfolio_MA/src/index.js/static/media/nodeIcon.dfe46e743dad2e77c3d3.png",
+    "index.html": "/Portfolio_MA/src/index.js/index.html",
+    "main.da28cfbb.css.map": "/Portfolio_MA/src/index.js/static/css/main.da28cfbb.css.map",
+    "main.8673c616.js.map": "/Portfolio_MA/src/index.js/static/js/main.8673c616.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.da28cfbb.css",
+    "static/js/main.8673c616.js"
+  ]
+}
