@@ -19,7 +19,7 @@ function Education({ winState, setWinState }) {
 					</div>
 					<div className='right-side'>
 						<button className='close-btn' onClick={handleClose}>
-							{/* <img src={closeBtn} alt='' /> */}X
+							<img src={closeBtn} alt='' />
 						</button>
 					</div>
 				</div>
@@ -34,7 +34,6 @@ function Education({ winState, setWinState }) {
 								<p>JavaScript - The Complete Guide 2022</p>
 								<p>React - The Complete Guide 2022</p>
 								<p>The Comeplete Node.js Developer Course</p>
-								<p>Redux & Material UI - !In Progress</p>
 							</div>
 						</li>
 						<li className='school-item'>

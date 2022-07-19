@@ -5,7 +5,7 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	height: 60%;
+	height: 70%;
 	width: 85%;
 	max-width: 900px;
 	max-height: 475px;
@@ -59,7 +59,7 @@
 				button {
 					width: 18px;
 					height: 80%;
-					background-color: #c0c6ca;
+					background-color: #b7b6b7;
 					margin-right: 2px;
 					border: none;
 					margin-left: 5px;
@@ -93,23 +93,33 @@
 			background-color: #c6c7c7;
 
 			.contact-box {
-				max-width: 850px;
+				width: 100%;
+				height: 100%;
 				display: grid;
 				grid-template-columns: repeat(2, 1fr);
-				justify-content: center;
+				justify-content: space-around;
 				align-items: center;
 				text-align: center;
 
 				.left {
 					height: 95%;
+					width: 95%;
+					align-self: center;
+					justify-self: center;
 					background: url('../images/Ottawa.png') no-repeat center;
 					background-size: cover;
 					border: 1px solid black;
 				}
 
 				.right {
+					display: flex;
+					flex-direction: column;
 					grid-column-start: 2;
-					padding: 2px 0 2px 40px;
+					margin: 0 auto;
+					height: 95%;
+					width: 95%;
+					align-content: center;
+					justify-content: center;
 
 					p {
 						justify-self: center;
@@ -140,13 +150,14 @@
 					}
 
 					.field {
-						width: 100%;
+						width: 80%;
+						height: 20px;
 						padding: 0.5rem 1rem;
 						background-color: rgba(250, 250, 250, 1);
 						font-size: 1.1rem;
 						outline: none;
 						border: none;
-						margin-bottom: 15px;
+						margin: 7px auto;
 						resize: none;
 						box-shadow: inset 0.14em 0.1em 0em 0 rgba(32, 33, 32, 0.7),
 							inset -0.14em -0.1em 0em 0 rgba(239, 241, 241, 255);
@@ -161,7 +172,7 @@
 						height: 23px;
 						width: 75px;
 						line-height: 23px;
-						margin: 0.5rem 1rem;
+						margin: 0.5rem auto;
 						font-size: 1.1rem;
 						cursor: pointer;
 						outline: none;

@@ -13,12 +13,14 @@ import {
 
 function Work({ winState, setWinState }) {
 	const [secWin, setSecWin] = useState({ target: '' });
+	const [state, setState] = useState({ active: '' });
+	const refIcon = useRef(null);
+
 	// Check if clicked outside the target. Remove highlight if True
 	useEffect(() => {
 		document.addEventListener('click', handleClickOutside, true);
 	});
 
-	const refIcon = useRef(null);
 	const handleClickOutside = (e) => {
 		if (!refIcon.current.contains(e.target)) {
 			setState(false);
@@ -26,15 +28,13 @@ function Work({ winState, setWinState }) {
 	};
 
 	// Check if target is clicked. If True then add the 'active' class to highlight
-	const [state, setState] = useState({ active: '' });
-
 	const clicked = (e) => {
 		const clicked = e.currentTarget.id;
 		setState({ active: clicked });
 	};
 
 	// Close the window(component) if the X button is clicked
-	const handleClose = (e) => {
+	const handleClose = () => {
 		setWinState({ projects: false });
 		setSecWin({ target: '' });
 	};

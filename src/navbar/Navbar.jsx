@@ -11,6 +11,8 @@ export default function Navbar({
 	btnState,
 	setBtnState,
 	setWinState,
+	setHoverState,
+	hoverState,
 }) {
 	const btnEl = useRef(null);
 	const btnClickHandler = (e) => {
@@ -22,6 +24,30 @@ export default function Navbar({
 			setMenuOpen(false);
 			setBtnState(false);
 		}
+	};
+
+	const addTooltip = (e) => {
+		console.log(e.currentTarget.id);
+		if (e.currentTarget.id === 'phone') {
+			setHoverState({ phone: true, email: false });
+		} else if (e.currentTarget.id === 'email') {
+			setHoverState({ phone: false, email: true });
+		}
+	};
+
+	const removeTooltip = () => {
+		if (hoverState.phone === true) {
+			setHoverState({ phone: false });
+		} else if (hoverState.email === true) {
+			setHoverState({ email: false });
+		}
+	};
+
+	const copyText = (e) => {
+		if (navigator && navigator.clipboard && navigator.clipboard.writeText) {
+			return navigator.clipboard.writeText(e.currentTarget.dataset.text);
+		}
+		return Promise.reject('The Clipboard API is not available.');
 	};
 
 	return (
@@ -43,13 +69,27 @@ export default function Navbar({
 					<div className='logo'></div>
 					<div className='right-side'>
 						<div className='contact-container'>
-							<div className='itemContainer'>
+							<div
+								className='itemContainer'
+								data-text='902-432-4145'
+								id='phone'
+								onMouseEnter={addTooltip}
+								onMouseLeave={removeTooltip}
+								onClick={copyText}
+							>
 								<BsFillTelephoneFill
 									data-text='Phone: 902-432-4145'
 									className='icon'
 								/>
 							</div>
-							<div className='itemContainer'>
+							<div
+								className='itemContainer'
+								data-text='Matthew.B.Arsenault@gmail.com'
+								onMouseEnter={addTooltip}
+								onMouseLeave={removeTooltip}
+								onClick={copyText}
+								id='email'
+							>
 								<IoMdMail
 									className='icon'
 									data-text='Email: Matthew.B.Arsenault@gmail.com'

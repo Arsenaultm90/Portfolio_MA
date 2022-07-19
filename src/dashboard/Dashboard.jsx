@@ -11,8 +11,9 @@ import {
 	education_highlight,
 	contact_highlight,
 } from '../images/index';
+import Bubble from './bubble/Bubble';
 
-function Intro({ setWinState }) {
+function Intro({ setWinState, hoverState, setHoverState }) {
 	useEffect(() => {
 		document.addEventListener('click', handleClickOutside, true);
 		return () => {
@@ -117,6 +118,7 @@ function Intro({ setWinState }) {
 					<h4>Resume</h4>
 				</div>
 			</div>
+			<Bubble hoverState={hoverState} setHoverState={setHoverState} />
 		</section>
 	);
 }

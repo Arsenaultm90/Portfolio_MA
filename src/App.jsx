@@ -14,10 +14,17 @@ function App() {
 		education: false,
 		contact: false,
 	});
+	const [hoverState, setHoverState] = useState({ phone: false, email: false });
+
 	return (
 		<div className='app'>
 			<div className='sections'>
-				<Dashboard winState={winState} setWinState={setWinState} />
+				<Dashboard
+					winState={winState}
+					setWinState={setWinState}
+					hoverState={hoverState}
+					setHoverState={setHoverState}
+				/>
 				<Work winState={winState} setWinState={setWinState} />
 				<Education winState={winState} setWinState={setWinState} />
 				<Contact winState={winState} setWinState={setWinState} />
@@ -28,6 +35,8 @@ function App() {
 				btnState={btnState}
 				setBtnState={setBtnState}
 				setWinState={setWinState}
+				hoverState={hoverState}
+				setHoverState={setHoverState}
 			/>
 		</div>
 	);
