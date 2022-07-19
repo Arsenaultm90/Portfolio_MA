@@ -1,6 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
 import './dashboard.scss';
-import '../global.scss';
 import resumePDF from '../files/MattArsenault_Resume.pdf';
 import {
 	work,
