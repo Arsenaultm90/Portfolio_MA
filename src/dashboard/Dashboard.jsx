@@ -24,7 +24,6 @@ function Intro({ winState, setWinState, hoverState, setHoverState }) {
 	const refShortcut = useRef(null);
 
 	const addHighlight = (e) => {
-		const clicked = e.currentTarget.id;
 		if (
 			navigator.userAgent.match(/Android/i) ||
 			navigator.userAgent.match(/webOS/i) ||
@@ -56,16 +55,7 @@ function Intro({ winState, setWinState, hoverState, setHoverState }) {
 					user: false,
 				});
 			} else if (e.currentTarget.id === 'resume') {
-				console.log('clicked resume');
-				return (
-					<iframe
-						src={resumePDF}
-						type='application/pdf'
-						title='title'
-						width='auto'
-						height='auto'
-					/>
-				);
+				window.open(resumePDF, '_blank', 'fullscreen=yes');
 			}
 		}
 	};

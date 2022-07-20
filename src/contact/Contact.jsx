@@ -53,7 +53,8 @@ function Contact({ winState, setWinState }) {
 						<div className='left'></div>
 						<form className='right' ref={formRef} onSubmit={sendEmail}>
 							<h4>Contact Me</h4>
-							<p>Phone: 902-432-4145 | Email: Matthew.B.Arsenault@gmail.com</p>
+							<p>Phone: 902-432-4145</p>
+							<p>Email: Matthew.B.Arsenault@gmail.com</p>
 							<input
 								type='text'
 								className='field'
