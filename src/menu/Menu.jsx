@@ -30,11 +30,33 @@ export default function Menu({
 
 	const openWindow = (e) => {
 		if (e.currentTarget.id === 'work') {
-			setWinState({ projects: true, education: false, contact: false });
+			setWinState({
+				projects: true,
+				education: false,
+				contact: false,
+				user: false,
+			});
 		} else if (e.currentTarget.id === 'education') {
-			setWinState({ projects: false, education: true, contact: false });
+			setWinState({
+				projects: false,
+				education: true,
+				contact: false,
+				user: false,
+			});
 		} else if (e.currentTarget.id === 'contact') {
-			setWinState({ projects: false, education: false, contact: true });
+			setWinState({
+				projects: false,
+				education: false,
+				contact: true,
+				user: false,
+			});
+		} else if (e.currentTarget.id === 'user') {
+			setWinState({
+				projects: false,
+				education: false,
+				contact: false,
+				user: true,
+			});
 		}
 		setMenuOpen(false);
 		setBtnState(false);
@@ -46,7 +68,7 @@ export default function Menu({
 				<img src={blueMenu} alt='' />
 			</div>
 			<ul>
-				<li>
+				<li onClick={openWindow} id='user'>
 					<img src={user} alt='' />
 					<a href='#user'>User</a>
 				</li>

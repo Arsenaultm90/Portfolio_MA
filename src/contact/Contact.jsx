@@ -27,7 +27,7 @@ function Contact({ winState, setWinState }) {
 		e.target.reset();
 	};
 
-	const handleClose = (e) => {
+	const handleClose = () => {
 		setWinState({ contact: false });
 	};
 	return (

@@ -3,6 +3,7 @@ import Dashboard from './dashboard/Dashboard';
 import Work from './work/Work';
 import Education from './education/Education';
 import Contact from './contact/Contact';
+import User from './user/User';
 import './App.scss';
 import { useState } from 'react';
 
@@ -13,6 +14,7 @@ function App() {
 		projects: false,
 		education: false,
 		contact: false,
+		user: true,
 	});
 	const [hoverState, setHoverState] = useState({ phone: false, email: false });
 
@@ -28,6 +30,7 @@ function App() {
 				<Work winState={winState} setWinState={setWinState} />
 				<Education winState={winState} setWinState={setWinState} />
 				<Contact winState={winState} setWinState={setWinState} />
+				<User winState={winState} setWinState={setWinState} />
 			</div>
 			<Navbar
 				menuOpen={menuOpen}

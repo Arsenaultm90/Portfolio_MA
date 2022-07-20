@@ -13,7 +13,7 @@ import {
 } from '../images/index';
 import Bubble from './bubble/Bubble';
 
-function Intro({ setWinState, hoverState, setHoverState }) {
+function Intro({ winState, setWinState, hoverState, setHoverState }) {
 	useEffect(() => {
 		document.addEventListener('click', handleClickOutside, true);
 		return () => {
@@ -25,7 +25,49 @@ function Intro({ setWinState, hoverState, setHoverState }) {
 
 	const addHighlight = (e) => {
 		const clicked = e.currentTarget.id;
-		setState({ active: clicked });
+		if (
+			navigator.userAgent.match(/Android/i) ||
+			navigator.userAgent.match(/webOS/i) ||
+			navigator.userAgent.match(/iPhone/i) ||
+			navigator.userAgent.match(/iPad/i) ||
+			navigator.userAgent.match(/iPod/i) ||
+			navigator.userAgent.match(/BlackBerry/i) ||
+			navigator.userAgent.match(/Windows Phone/i)
+		) {
+			if (e.currentTarget.id === 'work') {
+				setWinState({
+					projects: true,
+					education: false,
+					contact: false,
+					user: false,
+				});
+			} else if (e.currentTarget.id === 'education') {
+				setWinState({
+					projects: false,
+					education: true,
+					contact: false,
+					user: false,
+				});
+			} else if (e.currentTarget.id === 'contact') {
+				setWinState({
+					projects: false,
+					education: false,
+					contact: true,
+					user: false,
+				});
+			} else if (e.currentTarget.id === 'resume') {
+				console.log('clicked resume');
+				return (
+					<iframe
+						src={resumePDF}
+						type='application/pdf'
+						title='title'
+						width='auto'
+						height='auto'
+					/>
+				);
+			}
+		}
 	};
 
 	const handleClickOutside = (e) => {
@@ -37,13 +79,28 @@ function Intro({ setWinState, hoverState, setHoverState }) {
 	//Open the clicked shortcut window and remove highlight
 	const doubleClickHandler = (e) => {
 		if (e.currentTarget.id === 'work') {
-			setWinState({ projects: true, education: false, contact: false });
+			setWinState({
+				projects: true,
+				education: false,
+				contact: false,
+				user: false,
+			});
 			setState({ active: '' });
 		} else if (e.currentTarget.id === 'education') {
-			setWinState({ projects: false, education: true, contact: false });
+			setWinState({
+				projects: false,
+				education: true,
+				contact: false,
+				user: false,
+			});
 			setState({ active: '' });
 		} else if (e.currentTarget.id === 'contact') {
-			setWinState({ projects: false, education: false, contact: true });
+			setWinState({
+				projects: false,
+				education: false,
+				contact: true,
+				user: false,
+			});
 			setState({ active: '' });
 		}
 	};

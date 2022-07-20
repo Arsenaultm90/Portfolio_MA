@@ -18,6 +18,7 @@ import nodeIcon from './nodeIcon.png';
 import udemy from './Udemy.png';
 import camosun from './Camosun.png';
 import nbcc from './NBCC.png';
+import mattProfile from './MattProfile.png';
 
 export {
 	work,
@@ -40,4 +41,5 @@ export {
 	udemy,
 	camosun,
 	nbcc,
+	mattProfile,
 };
