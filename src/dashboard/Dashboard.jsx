@@ -24,6 +24,8 @@ function Intro({ winState, setWinState, hoverState, setHoverState }) {
 	const refShortcut = useRef(null);
 
 	const addHighlight = (e) => {
+		const clicked = e.currentTarget.id;
+		setState({ active: clicked });
 		if (
 			navigator.userAgent.match(/Android/i) ||
 			navigator.userAgent.match(/webOS/i) ||
@@ -40,6 +42,7 @@ function Intro({ winState, setWinState, hoverState, setHoverState }) {
 					contact: false,
 					user: false,
 				});
+				setState({ active: '' });
 			} else if (e.currentTarget.id === 'education') {
 				setWinState({
 					projects: false,
@@ -47,6 +50,7 @@ function Intro({ winState, setWinState, hoverState, setHoverState }) {
 					contact: false,
 					user: false,
 				});
+				setState({ active: '' });
 			} else if (e.currentTarget.id === 'contact') {
 				setWinState({
 					projects: false,
@@ -54,8 +58,10 @@ function Intro({ winState, setWinState, hoverState, setHoverState }) {
 					contact: true,
 					user: false,
 				});
+				setState({ active: '' });
 			} else if (e.currentTarget.id === 'resume') {
 				window.open(resumePDF, '_blank', 'fullscreen=yes');
+				setState({ active: '' });
 			}
 		}
 	};
