@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import './javascriptwindow.scss';
-import { reactIcon, reactIcon_highlight } from '../../images/index';
+import { reactIcon, reactIcon_highlight, wordleIcon } from '../../images/index';
 
 function JavascriptWindow({ secWin, setSecWin }) {
 	// Check if clicked outside the target. Remove highlight if True
@@ -21,6 +21,36 @@ function JavascriptWindow({ secWin, setSecWin }) {
 	const clicked = (e) => {
 		const clicked = e.currentTarget.id;
 		setState({ active: clicked });
+		if (
+			navigator.userAgent.match(/Android/i) ||
+			navigator.userAgent.match(/webOS/i) ||
+			navigator.userAgent.match(/iPhone/i) ||
+			navigator.userAgent.match(/iPad/i) ||
+			navigator.userAgent.match(/iPod/i) ||
+			navigator.userAgent.match(/BlackBerry/i) ||
+			navigator.userAgent.match(/Windows Phone/i)
+		) {
+			switch (e.currentTarget.id) {
+				case 'wordle':
+					window.open('https://heartfelt-horse-f50b8d.netlify.app/', '_blank');
+					setState({ active: '' });
+					break;
+
+				default:
+					break;
+			}
+		}
+	};
+
+	const openWindow = (e) => {
+		switch (e.currentTarget.id) {
+			case 'wordle':
+				window.open('https://heartfelt-horse-f50b8d.netlify.app/', '_blank');
+				break;
+
+			default:
+				break;
+		}
 	};
 
 	const backBtnClicked = () => {
@@ -40,14 +70,15 @@ function JavascriptWindow({ secWin, setSecWin }) {
 				<ul className='link-container'>
 					<li
 						className={
-							'link-item ' + `${state.active === 'vanilla' ? 'active' : ''}`
+							'link-item ' + `${state.active === 'wordle' ? 'active' : ''}`
 						}
-						id='vanilla'
+						id='wordle'
 						ref={refIcon}
 						onClick={clicked}
+						onDoubleClick={openWindow}
 					>
-						<img src={reactIcon} alt='' />
-						<h4>Banana</h4>
+						<img src={wordleIcon} alt='' />
+						<h4>Wordle Clone</h4>
 					</li>
 					<li
 						className={

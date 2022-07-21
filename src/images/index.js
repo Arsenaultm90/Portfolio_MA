@@ -19,6 +19,7 @@ import udemy from './Udemy.png';
 import camosun from './Camosun.png';
 import nbcc from './NBCC.png';
 import mattProfile from './MattProfile.png';
+import wordleIcon from './wordleIcon.webp';
 
 export {
 	work,
@@ -42,4 +43,5 @@ export {
 	camosun,
 	nbcc,
 	mattProfile,
+	wordleIcon,
 };
