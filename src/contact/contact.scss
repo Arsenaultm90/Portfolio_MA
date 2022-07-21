@@ -13,8 +13,9 @@
 
 	@media screen and (max-width: $phone) {
 		max-height: 70%;
-		height: 65%;
+		height: 80%;
 		width: 95%;
+		top: 37%;
 	}
 
 	&.close {
@@ -208,6 +209,7 @@
 						@media screen and (max-width: $phone) {
 							height: 40px;
 							font-size: 1.2rem;
+							color: black;
 						}
 
 						&:active {

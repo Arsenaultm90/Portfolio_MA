@@ -6,7 +6,7 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	height: 85%;
-	width: 65%;
+	width: 45%;
 	max-height: 800px;
 	max-width: 1200px;
 	background-color: #c0c6ca;
@@ -16,6 +16,8 @@
 
 	@media screen and (max-width: $phone) {
 		width: 95%;
+		height: 80%;
+		top: 41%;
 	}
 
 	&.close {
@@ -114,6 +116,7 @@
 					display: flex;
 					align-items: center;
 					flex-direction: column;
+					margin: 5px 50px;
 
 					@media screen and (max-width: $phone) {
 						margin: 10px 5px;

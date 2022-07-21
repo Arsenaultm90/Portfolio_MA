@@ -6,6 +6,7 @@ import Contact from './contact/Contact';
 import User from './user/User';
 import './App.scss';
 import { useState } from 'react';
+import Div100vh from 'react-div-100vh';
 
 function App() {
 	const [menuOpen, setMenuOpen] = useState(false);
@@ -19,29 +20,31 @@ function App() {
 	const [hoverState, setHoverState] = useState({ phone: false, email: false });
 
 	return (
-		<div className='app'>
-			<div className='sections'>
-				<Dashboard
-					winState={winState}
+		<Div100vh>
+			<div className='app'>
+				<div className='sections'>
+					<Dashboard
+						winState={winState}
+						setWinState={setWinState}
+						hoverState={hoverState}
+						setHoverState={setHoverState}
+					/>
+					<Work winState={winState} setWinState={setWinState} />
+					<Education winState={winState} setWinState={setWinState} />
+					<Contact winState={winState} setWinState={setWinState} />
+					<User winState={winState} setWinState={setWinState} />
+				</div>
+				<Navbar
+					menuOpen={menuOpen}
+					setMenuOpen={setMenuOpen}
+					btnState={btnState}
+					setBtnState={setBtnState}
 					setWinState={setWinState}
 					hoverState={hoverState}
 					setHoverState={setHoverState}
 				/>
-				<Work winState={winState} setWinState={setWinState} />
-				<Education winState={winState} setWinState={setWinState} />
-				<Contact winState={winState} setWinState={setWinState} />
-				<User winState={winState} setWinState={setWinState} />
 			</div>
-			<Navbar
-				menuOpen={menuOpen}
-				setMenuOpen={setMenuOpen}
-				btnState={btnState}
-				setBtnState={setBtnState}
-				setWinState={setWinState}
-				hoverState={hoverState}
-				setHoverState={setHoverState}
-			/>
-		</div>
+		</Div100vh>
 	);
 }
 
