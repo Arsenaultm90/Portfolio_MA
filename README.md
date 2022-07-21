@@ -1,14 +1,10 @@
 # Goal of this project
 
-#
-
 My goal was to complete a portfolio site where I could host links to other projects while learning **Git**, **React**, and Responsive
 web design. You'll notice that the template for my portfolio is a Windows 98 simulation, and while this wouldn't be a something
 someone would use in a professional environment, I found it to be a good learning experience with **React** and **CSS(SASS)**.
 
 # Frameworks & Libraries
-
-#
 
 - HTML
 - CSS(SASS)
@@ -16,8 +12,6 @@ someone would use in a professional environment, I found it to be a good learnin
 - EmailJS(For contact form)
 
 # Why I built the project this way
-
-#
 
 The main purpose for this project was to learn workflow, react, and better habits. You may notice that some commits don't have anything written
 in them, or that my folder structure isn't quite what it should be. All these things were part of my learning exerience and as I continue my education
@@ -28,8 +22,6 @@ their goals. I opted for a more Vanilla approach so I could learn a few key feat
 easily in the future.
 
 # Future Updates/Changes
-
-#
 
 When I come back this project I would like to update the following:
 
