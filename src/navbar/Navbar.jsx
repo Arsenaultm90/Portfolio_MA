@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import './navbar.scss';
-import { BsFillTelephoneFill } from 'react-icons/bs';
+import { BsFillTelephoneFill, BsGithub, BsLinkedin } from 'react-icons/bs';
 import { IoMdMail } from 'react-icons/io';
 import { startBtn } from '../images';
 import Menu from '../menu/Menu';
@@ -23,6 +23,18 @@ export default function Navbar({
 		} else {
 			setMenuOpen(false);
 			setBtnState(false);
+		}
+	};
+
+	const socialClickHandler = (e) => {
+		if (e.currentTarget.id === 'github') {
+			window.open('https://github.com/Arsenaultm90', '_blank', 'fullscreen');
+		} else if (e.currentTarget.id === 'linkedin') {
+			window.open(
+				'https://www.linkedin.com/in/arsenaultm/',
+				'_blank',
+				'fullscreen'
+			);
 		}
 	};
 
@@ -64,6 +76,20 @@ export default function Navbar({
 							>
 								<img src={startBtn} alt='' />
 							</button>
+							<span className='v-divider'></span>
+							<BsGithub
+								size={20}
+								className='social-icon'
+								id='github'
+								onClick={socialClickHandler}
+							/>
+							<BsLinkedin
+								size={20}
+								className='social-icon'
+								id='linkedin'
+								onClick={socialClickHandler}
+							/>
+							<span className='v-divider'></span>
 						</div>
 					</div>
 					<div className='logo'></div>
