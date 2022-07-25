@@ -14,12 +14,16 @@ import closeBtn from './closeBtn.png';
 import reactIcon from './reactIcon.png';
 import reactIcon_highlight from './reactIcon_highlight.png';
 import jsIcon from './jsIcon.png';
+import jsIcon_highlight from './jsIcon_highlight.png';
 import nodeIcon from './nodeIcon.png';
 import udemy from './Udemy.png';
 import camosun from './Camosun.png';
 import nbcc from './NBCC.png';
 import mattProfile from './MattProfile.png';
-import wordleIcon from './wordleIcon.webp';
+import wordleIcon from './wordle.png';
+import wordle_highlight from './wordle_highlight.png';
+import recipes from './recipes.png';
+import recipe_highlight from './recipes_highlight.png';
 
 export {
 	work,
@@ -38,10 +42,14 @@ export {
 	reactIcon,
 	reactIcon_highlight,
 	jsIcon,
+	jsIcon_highlight,
 	nodeIcon,
 	udemy,
 	camosun,
 	nbcc,
 	mattProfile,
 	wordleIcon,
+	wordle_highlight,
+	recipes,
+	recipe_highlight,
 };

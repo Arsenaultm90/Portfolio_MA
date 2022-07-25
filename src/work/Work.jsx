@@ -8,6 +8,7 @@ import {
 	reactIcon,
 	reactIcon_highlight,
 	jsIcon,
+	jsIcon_highlight,
 	nodeIcon,
 } from '../images/index';
 
@@ -19,11 +20,15 @@ function Work({ winState, setWinState }) {
 	// Check if clicked outside the target. Remove highlight if True
 	useEffect(() => {
 		document.addEventListener('click', handleClickOutside, true);
+		return () => {
+			document.removeEventListener('click', handleClickOutside, true);
+		};
 	});
 
 	const handleClickOutside = (e) => {
-		if (!refIcon.current.contains(e.target)) {
-			setState(false);
+		console.log('inside outside');
+		if (!refIcon.current.contains(e.currentTarget)) {
+			setState({ active: '' });
 		}
 	};
 
@@ -70,7 +75,10 @@ function Work({ winState, setWinState }) {
 							onClick={clicked}
 							onDoubleClick={dblClicked}
 						>
-							<img src={jsIcon} alt='' />
+							<img
+								src={state.active === 'vanilla' ? jsIcon_highlight : jsIcon}
+								alt=''
+							/>
 							<h4>JavaScript</h4>
 						</li>
 						<li
@@ -98,28 +106,6 @@ function Work({ winState, setWinState }) {
 						>
 							<img src={nodeIcon} alt='' />
 							<h4>Node JS</h4>
-						</li>
-						<li
-							className={
-								'link-item ' + `${state.active === 'game' ? 'active' : ''}`
-							}
-							id='game'
-							ref={refIcon}
-							onClick={clicked}
-						>
-							<img src={reactIcon} alt='' />
-							<h4>React</h4>
-						</li>
-						<li
-							className={
-								'link-item ' + `${state.active === 'blah' ? 'active' : ''}`
-							}
-							id='blah'
-							ref={refIcon}
-							onClick={clicked}
-						>
-							<img src={reactIcon} alt='' />
-							<h4>React</h4>
 						</li>
 					</ul>
 					<ReactWindow secWin={secWin} setSecWin={setSecWin} />

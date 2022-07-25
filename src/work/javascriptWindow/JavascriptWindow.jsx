@@ -1,6 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
 import './javascriptwindow.scss';
-import { reactIcon, reactIcon_highlight, wordleIcon } from '../../images/index';
+import {
+	reactIcon,
+	reactIcon_highlight,
+	wordleIcon,
+	wordle_highlight,
+	recipes,
+	recipe_highlight,
+} from '../../images/index';
 
 function JavascriptWindow({ secWin, setSecWin }) {
 	// Check if clicked outside the target. Remove highlight if True
@@ -36,6 +43,14 @@ function JavascriptWindow({ secWin, setSecWin }) {
 					setState({ active: '' });
 					break;
 
+				case 'recipe':
+					window.open(
+						'https://the-great-arsenaultm90-site.netlify.app',
+						'_blank'
+					);
+					setState({ active: '' });
+					break;
+
 				default:
 					break;
 			}
@@ -46,6 +61,13 @@ function JavascriptWindow({ secWin, setSecWin }) {
 		switch (e.currentTarget.id) {
 			case 'wordle':
 				window.open('https://heartfelt-horse-f50b8d.netlify.app/', '_blank');
+				break;
+
+			case 'recipe':
+				window.open(
+					'https://the-great-arsenaultm90-site.netlify.app',
+					'_blank'
+				);
 				break;
 
 			default:
@@ -77,22 +99,26 @@ function JavascriptWindow({ secWin, setSecWin }) {
 						onClick={clicked}
 						onDoubleClick={openWindow}
 					>
-						<img src={wordleIcon} alt='' />
+						<img
+							src={state.active === 'wordle' ? wordle_highlight : wordleIcon}
+							alt=''
+						/>
 						<h4>Wordle Clone</h4>
 					</li>
 					<li
 						className={
-							'link-item ' + `${state.active === 'react' ? 'active' : ''}`
+							'link-item ' + `${state.active === 'recipe' ? 'active' : ''}`
 						}
-						id='react'
+						id='recipe'
 						ref={refIcon}
 						onClick={clicked}
+						onDoubleClick={openWindow}
 					>
 						<img
-							src={state.active === 'react' ? reactIcon_highlight : reactIcon}
+							src={state.active === 'recipe' ? recipe_highlight : recipes}
 							alt=''
 						/>
-						<h4>React</h4>
+						<h4>Recipes API</h4>
 					</li>
 					<li
 						className={
