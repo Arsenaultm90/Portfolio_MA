@@ -21,6 +21,28 @@ function ReactWindow({ secWin, setSecWin }) {
 	const clicked = (e) => {
 		const clicked = e.currentTarget.id;
 		setState({ active: clicked });
+		if (
+			navigator.userAgent.match(/Android/i) ||
+			navigator.userAgent.match(/webOS/i) ||
+			navigator.userAgent.match(/iPhone/i) ||
+			navigator.userAgent.match(/iPad/i) ||
+			navigator.userAgent.match(/iPod/i) ||
+			navigator.userAgent.match(/BlackBerry/i) ||
+			navigator.userAgent.match(/Windows Phone/i)
+		) {
+			switch (e.currentTarget.id) {
+				case 'movieAPI':
+					window.open(
+						'https://isnt-arsenaultm90-awesome.netlify.app',
+						'_blank'
+					);
+					break;
+
+				default:
+					break;
+			}
+			setState({ active: '' });
+		}
 	};
 
 	const backBtnClicked = () => {

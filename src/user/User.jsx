@@ -14,26 +14,19 @@ function User({ winState, setWinState }) {
 
 	return (
 		<section className={'user ' + (winState.user === true && 'active')}>
-			<div className='title-bar'>
-				<div className='left-side'>
-					<img src={user} alt='' />
-					<h4>User</h4>
-				</div>
-				<div className='right-side'>
-					<button className='close-btn' onClick={handleClose}>
-						<img src={closeBtn} alt='' />
-					</button>
-				</div>
-			</div>
-			<span className='divider'></span>
 			<div className='user-container'>
-				<div className='tab-container'>
-					<div className='tab-overlay'>
-						<div className='tab-outline'>
-							<p>User</p>
-						</div>
+				<div className='title-bar'>
+					<div className='left-side'>
+						<img src={user} alt='' />
+						<h4>User</h4>
+					</div>
+					<div className='right-side'>
+						<button className='close-btn' onClick={handleClose}>
+							<img src={closeBtn} alt='' />
+						</button>
 					</div>
 				</div>
+				<span className='divider'></span>
 				<div className='content-container'>
 					<div className='left'>
 						<img src={mattProfile} alt='' />
