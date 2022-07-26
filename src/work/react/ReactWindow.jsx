@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import './reactwindow.scss';
-import { reactIcon, reactIcon_highlight } from '../../images/index';
+import { movieAPI, movieAPI_highlight } from '../../images/index';
 
 function ReactWindow({ secWin, setSecWin }) {
 	// Check if clicked outside the target. Remove highlight if True
@@ -27,6 +27,17 @@ function ReactWindow({ secWin, setSecWin }) {
 		setSecWin({ target: '' });
 	};
 
+	const openWindow = (e) => {
+		switch (e.currentTarget.id) {
+			case 'movieAPI':
+				window.open('https://isnt-arsenaultm90-awesome.netlify.app', '_blank');
+				break;
+
+			default:
+				break;
+		}
+	};
+
 	return (
 		<section
 			className={'react-window ' + (secWin.target === 'react' ? 'open' : '')}
@@ -40,61 +51,18 @@ function ReactWindow({ secWin, setSecWin }) {
 				<ul className='link-container'>
 					<li
 						className={
-							'link-item ' + `${state.active === 'vanilla' ? 'active' : ''}`
+							'link-item ' + `${state.active === 'movieAPI' ? 'active' : ''}`
 						}
-						id='vanilla'
+						id='movieAPI'
 						ref={refIcon}
 						onClick={clicked}
-					>
-						<img src={reactIcon} alt='' />
-						<h4>React</h4>
-					</li>
-					<li
-						className={
-							'link-item ' + `${state.active === 'react' ? 'active' : ''}`
-						}
-						id='react'
-						ref={refIcon}
-						onClick={clicked}
+						onDoubleClick={openWindow}
 					>
 						<img
-							src={state.active === 'react' ? reactIcon_highlight : reactIcon}
+							src={state.active === 'movieAPI' ? movieAPI_highlight : movieAPI}
 							alt=''
 						/>
-						<h4>React</h4>
-					</li>
-					<li
-						className={
-							'link-item ' + `${state.active === 'NodeJS' ? 'active' : ''}`
-						}
-						id='NodeJS'
-						ref={refIcon}
-						onClick={clicked}
-					>
-						<img src={reactIcon} alt='' />
-						<h4>React</h4>
-					</li>
-					<li
-						className={
-							'link-item ' + `${state.active === 'game' ? 'active' : ''}`
-						}
-						id='game'
-						ref={refIcon}
-						onClick={clicked}
-					>
-						<img src={reactIcon} alt='' />
-						<h4>React</h4>
-					</li>
-					<li
-						className={
-							'link-item ' + `${state.active === 'blah' ? 'active' : ''}`
-						}
-						id='blah'
-						ref={refIcon}
-						onClick={clicked}
-					>
-						<img src={reactIcon} alt='' />
-						<h4>React</h4>
+						<h4>Movie Search API</h4>
 					</li>
 				</ul>
 			</div>

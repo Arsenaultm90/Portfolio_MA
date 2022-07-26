@@ -16,6 +16,7 @@ import reactIcon_highlight from './reactIcon_highlight.png';
 import jsIcon from './jsIcon.png';
 import jsIcon_highlight from './jsIcon_highlight.png';
 import nodeIcon from './nodeIcon.png';
+import nodeIcon_highlight from './nodeIcon_highlight.png';
 import udemy from './Udemy.png';
 import camosun from './Camosun.png';
 import nbcc from './NBCC.png';
@@ -24,6 +25,8 @@ import wordleIcon from './wordle.png';
 import wordle_highlight from './wordle_highlight.png';
 import recipes from './recipes.png';
 import recipe_highlight from './recipes_highlight.png';
+import movieAPI from './movieAPI.png';
+import movieAPI_highlight from './movieAPI_highlight.png';
 
 export {
 	work,
@@ -44,6 +47,7 @@ export {
 	jsIcon,
 	jsIcon_highlight,
 	nodeIcon,
+	nodeIcon_highlight,
 	udemy,
 	camosun,
 	nbcc,
@@ -52,4 +56,6 @@ export {
 	wordle_highlight,
 	recipes,
 	recipe_highlight,
+	movieAPI,
+	movieAPI_highlight,
 };

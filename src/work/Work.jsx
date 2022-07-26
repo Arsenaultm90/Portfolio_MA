@@ -10,6 +10,7 @@ import {
 	jsIcon,
 	jsIcon_highlight,
 	nodeIcon,
+	nodeIcon_highlight,
 } from '../images/index';
 
 function Work({ winState, setWinState }) {
@@ -104,7 +105,10 @@ function Work({ winState, setWinState }) {
 							ref={refIcon}
 							onClick={clicked}
 						>
-							<img src={nodeIcon} alt='' />
+							<img
+								src={state.active === 'NodeJS' ? nodeIcon_highlight : nodeIcon}
+								alt=''
+							/>
 							<h4>Node JS</h4>
 						</li>
 					</ul>

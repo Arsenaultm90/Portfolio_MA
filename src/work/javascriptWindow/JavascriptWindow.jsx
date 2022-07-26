@@ -120,39 +120,6 @@ function JavascriptWindow({ secWin, setSecWin }) {
 						/>
 						<h4>Recipes API</h4>
 					</li>
-					<li
-						className={
-							'link-item ' + `${state.active === 'NodeJS' ? 'active' : ''}`
-						}
-						id='NodeJS'
-						ref={refIcon}
-						onClick={clicked}
-					>
-						<img src={reactIcon} alt='' />
-						<h4>React</h4>
-					</li>
-					<li
-						className={
-							'link-item ' + `${state.active === 'game' ? 'active' : ''}`
-						}
-						id='game'
-						ref={refIcon}
-						onClick={clicked}
-					>
-						<img src={reactIcon} alt='' />
-						<h4>React</h4>
-					</li>
-					<li
-						className={
-							'link-item ' + `${state.active === 'blah' ? 'active' : ''}`
-						}
-						id='blah'
-						ref={refIcon}
-						onClick={clicked}
-					>
-						<img src={reactIcon} alt='' />
-						<h4>React</h4>
-					</li>
 				</ul>
 			</div>
 		</section>

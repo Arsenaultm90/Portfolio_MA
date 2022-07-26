@@ -88,8 +88,9 @@
 
 		.divider {
 			display: block;
-			height: 3px;
+			height: 1px;
 			width: 100%;
+			margin: 1px auto;
 			background-color: #c0c6ca;
 			box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);
 		}
