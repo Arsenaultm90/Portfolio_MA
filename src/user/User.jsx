@@ -35,9 +35,8 @@ function User({ winState, setWinState }) {
 						<div className='info-container'>
 							<div className='status'>
 								<h4>Name: Matt Arsenault</h4>
-								<h4>DOB: January 25th, 1990</h4>
 								<h4>Residence: Ottawa, ON</h4>
-								<h4>Status: Unemployed</h4>
+								<h4>Status: Looking For Employment</h4>
 							</div>
 							<div className='bio'>
 								<h4>Hi there,</h4>

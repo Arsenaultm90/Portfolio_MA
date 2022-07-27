@@ -12,4 +12,9 @@ $tablet: 850px;
 	font-size: 0.9rem;
 	margin: 0;
 	padding: 0;
+	overflow-y: hidden;
+	::-webkit-scrollbar {
+		width: 0px;
+		background: transparent; /* make scrollbar transparent */
+	}
 }

@@ -74,7 +74,7 @@ function Contact({ winState, setWinState }) {
 							<input
 								type='text'
 								className='field'
-								placeholder='Phone(Optional)'
+								placeholder='Phone (Optional)'
 								tabIndex={3}
 								name='phone'
 							/>
