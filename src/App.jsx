@@ -5,12 +5,13 @@ import Education from './education/Education';
 import Contact from './contact/Contact';
 import User from './user/User';
 import './App.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Div100vh from 'react-div-100vh';
 
 function App() {
 	const [menuOpen, setMenuOpen] = useState(false);
 	const [btnState, setBtnState] = useState(false);
+	const [winLocation, setWinLocation] = useState({ x: 0, y: 0 });
 	const [winState, setWinState] = useState({
 		projects: false,
 		education: false,
@@ -18,6 +19,10 @@ function App() {
 		user: true,
 	});
 	const [hoverState, setHoverState] = useState({ phone: false, email: false });
+
+	useEffect(() => {
+		setWinLocation({ x: 0, y: 0 });
+	}, [winState]);
 
 	return (
 		<Div100vh>
@@ -29,10 +34,30 @@ function App() {
 						hoverState={hoverState}
 						setHoverState={setHoverState}
 					/>
-					<Work winState={winState} setWinState={setWinState} />
-					<Education winState={winState} setWinState={setWinState} />
-					<Contact winState={winState} setWinState={setWinState} />
-					<User winState={winState} setWinState={setWinState} />
+					<Work
+						winState={winState}
+						setWinState={setWinState}
+						winLocation={winLocation}
+						setWinLocation={setWinLocation}
+					/>
+					<Education
+						winState={winState}
+						setWinState={setWinState}
+						winLocation={winLocation}
+						setWinLocation={setWinLocation}
+					/>
+					<Contact
+						winState={winState}
+						setWinState={setWinState}
+						winLocation={winLocation}
+						setWinLocation={setWinLocation}
+					/>
+					<User
+						winState={winState}
+						setWinState={setWinState}
+						winLocation={winLocation}
+						setWinLocation={setWinLocation}
+					/>
 				</div>
 				<Navbar
 					menuOpen={menuOpen}

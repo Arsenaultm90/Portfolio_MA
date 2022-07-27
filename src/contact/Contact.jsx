@@ -1,10 +1,15 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
+import Draggable from 'react-draggable';
 import emailjs from 'emailjs-com';
 import './contact.scss';
 import { contact, closeBtn } from '../images/index';
 
-function Contact({ winState, setWinState }) {
+function Contact({ winState, setWinState, winLocation, setWinLocation }) {
 	const formRef = useRef(null);
+
+	const trackPos = (data) => {
+		setWinLocation({ x: data.x, y: data.y });
+	};
 
 	const sendEmail = (e) => {
 		e.preventDefault();
@@ -31,68 +36,75 @@ function Contact({ winState, setWinState }) {
 		setWinState({ contact: false });
 	};
 	return (
-		<section
-			className={'contact ' + (!winState.contact && 'close')}
-			id='contact'
+		<Draggable
+			handle='#handle'
+			positionOffset={{ x: '-50%', y: '-50%' }}
+			position={{ x: winLocation.x, y: winLocation.y }}
+			onDrag={(e, data) => trackPos(data)}
 		>
-			<div className='contact-container'>
-				<div className='title-bar'>
-					<div className='left-side'>
-						<img src={contact} alt='' />
-						<h4>Contact</h4>
-					</div>
-					<div className='right-side'>
-						<button className='close-btn' onClick={handleClose}>
-							<img src={closeBtn} alt='' />
-						</button>
-					</div>
-				</div>
-				<span className='divider'></span>
-				<div className='input-container'>
-					<div className='contact-box'>
-						<div className='left'></div>
-						<form className='right' ref={formRef} onSubmit={sendEmail}>
-							<h4>Contact Me</h4>
-							<p>Phone: 902-432-4145</p>
-							<p>Email: Matthew.B.Arsenault@gmail.com</p>
-							<input
-								type='text'
-								className='field'
-								placeholder='Name'
-								tabIndex={1}
-								name='name'
-								required
-							/>
-							<input
-								type='email'
-								className='field'
-								placeholder='Email'
-								tabIndex={2}
-								name='email'
-								required
-							/>
-							<input
-								type='text'
-								className='field'
-								placeholder='Phone (Optional)'
-								tabIndex={3}
-								name='phone'
-							/>
-							<textarea
-								className='field area'
-								placeholder='Message'
-								tabIndex={4}
-								name='message'
-								required
-							></textarea>
-							<button className='submit-btn' type='submit'>
-								Submit
+			<section
+				className={'contact ' + (!winState.contact && 'close')}
+				id='contact'
+			>
+				<div className='contact-container'>
+					<div className='title-bar' id='handle'>
+						<div className='left-side'>
+							<img src={contact} alt='' />
+							<h4>Contact</h4>
+						</div>
+						<div className='right-side'>
+							<button className='close-btn' onClick={handleClose}>
+								<img src={closeBtn} alt='' />
 							</button>
-						</form>
+						</div>
+					</div>
+					<span className='divider'></span>
+					<div className='input-container'>
+						<div className='contact-box'>
+							<div className='left'></div>
+							<form className='right' ref={formRef} onSubmit={sendEmail}>
+								<h4>Contact Me</h4>
+								<p>Phone: 902-432-4145</p>
+								<p>Email: Matthew.B.Arsenault@gmail.com</p>
+								<input
+									type='text'
+									className='field'
+									placeholder='Name'
+									tabIndex={1}
+									name='name'
+									required
+								/>
+								<input
+									type='email'
+									className='field'
+									placeholder='Email'
+									tabIndex={2}
+									name='email'
+									required
+								/>
+								<input
+									type='text'
+									className='field'
+									placeholder='Phone (Optional)'
+									tabIndex={3}
+									name='phone'
+								/>
+								<textarea
+									className='field area'
+									placeholder='Message'
+									tabIndex={4}
+									name='message'
+									required
+								></textarea>
+								<button className='submit-btn' type='submit'>
+									Submit
+								</button>
+							</form>
+						</div>
 					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+		</Draggable>
 	);
 }
 

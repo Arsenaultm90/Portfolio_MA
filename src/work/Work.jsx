@@ -12,8 +12,9 @@ import {
 	nodeIcon,
 	nodeIcon_highlight,
 } from '../images/index';
+import Draggable from 'react-draggable';
 
-function Work({ winState, setWinState }) {
+function Work({ winState, setWinState, winLocation, setWinLocation }) {
 	const [secWin, setSecWin] = useState({ target: '' });
 	const [state, setState] = useState({ active: '' });
 	const refIcon = useRef(null);
@@ -26,8 +27,11 @@ function Work({ winState, setWinState }) {
 		};
 	});
 
+	const trackPos = (data) => {
+		setWinLocation({ x: data.x, y: data.y });
+	};
+
 	const handleClickOutside = (e) => {
-		console.log('inside outside');
 		if (!refIcon.current.contains(e.currentTarget)) {
 			setState({ active: '' });
 		}
@@ -64,72 +68,85 @@ function Work({ winState, setWinState }) {
 	};
 
 	return (
-		<section className={'work ' + (!winState.projects && 'close')} id='work'>
-			<div className='work-container'>
-				<div className='title-bar'>
-					<div className='left-side'>
-						<img src={work} alt='' />
-						<h4>Projects</h4>
+		<Draggable
+			handle='#handle'
+			positionOffset={{ x: '-50%', y: '-50%' }}
+			position={{ x: winLocation.x, y: winLocation.y }}
+			onDrag={(e, data) => trackPos(data)}
+		>
+			<section className={'work ' + (!winState.projects && 'close')} id='work'>
+				<div className='work-container'>
+					<div className='title-bar' id='handle'>
+						<div className='left-side'>
+							<img src={work} alt='' />
+							<h4>Projects</h4>
+						</div>
+						<div className='right-side'>
+							<button className='close-btn' onClick={handleClose}>
+								<img src={closeBtn} alt='' />
+							</button>
+						</div>
 					</div>
-					<div className='right-side'>
-						<button className='close-btn' onClick={handleClose}>
-							<img src={closeBtn} alt='' />
-						</button>
+					<span className='divider'></span>
+					<div className='content-container'>
+						<ul
+							className={'link-container ' + (secWin.target !== '' && 'hide')}
+						>
+							<li
+								className={
+									'link-item ' + `${state.active === 'vanilla' ? 'active' : ''}`
+								}
+								id='vanilla'
+								ref={refIcon}
+								onClick={clicked}
+								onDoubleClick={dblClicked}
+							>
+								<img
+									src={state.active === 'vanilla' ? jsIcon_highlight : jsIcon}
+									alt=''
+								/>
+								<h4>JavaScript</h4>
+							</li>
+							<li
+								className={
+									'link-item ' + `${state.active === 'react' ? 'active' : ''}`
+								}
+								id='react'
+								ref={refIcon}
+								onClick={clicked}
+								onDoubleClick={dblClicked}
+							>
+								<img
+									src={
+										state.active === 'react' ? reactIcon_highlight : reactIcon
+									}
+									alt=''
+								/>
+								<h4>React</h4>
+							</li>
+							<li
+								className={
+									'link-item ' + `${state.active === 'NodeJS' ? 'active' : ''}`
+								}
+								id='NodeJS'
+								ref={refIcon}
+								onClick={clicked}
+							>
+								<img
+									src={
+										state.active === 'NodeJS' ? nodeIcon_highlight : nodeIcon
+									}
+									alt=''
+								/>
+								<h4>Node JS</h4>
+							</li>
+						</ul>
+						<ReactWindow secWin={secWin} setSecWin={setSecWin} />
+						<JavascriptWindow secWin={secWin} setSecWin={setSecWin} />
 					</div>
 				</div>
-				<span className='divider'></span>
-				<div className='content-container'>
-					<ul className={'link-container ' + (secWin.target !== '' && 'hide')}>
-						<li
-							className={
-								'link-item ' + `${state.active === 'vanilla' ? 'active' : ''}`
-							}
-							id='vanilla'
-							ref={refIcon}
-							onClick={clicked}
-							onDoubleClick={dblClicked}
-						>
-							<img
-								src={state.active === 'vanilla' ? jsIcon_highlight : jsIcon}
-								alt=''
-							/>
-							<h4>JavaScript</h4>
-						</li>
-						<li
-							className={
-								'link-item ' + `${state.active === 'react' ? 'active' : ''}`
-							}
-							id='react'
-							ref={refIcon}
-							onClick={clicked}
-							onDoubleClick={dblClicked}
-						>
-							<img
-								src={state.active === 'react' ? reactIcon_highlight : reactIcon}
-								alt=''
-							/>
-							<h4>React</h4>
-						</li>
-						<li
-							className={
-								'link-item ' + `${state.active === 'NodeJS' ? 'active' : ''}`
-							}
-							id='NodeJS'
-							ref={refIcon}
-							onClick={clicked}
-						>
-							<img
-								src={state.active === 'NodeJS' ? nodeIcon_highlight : nodeIcon}
-								alt=''
-							/>
-							<h4>Node JS</h4>
-						</li>
-					</ul>
-					<ReactWindow secWin={secWin} setSecWin={setSecWin} />
-					<JavascriptWindow secWin={secWin} setSecWin={setSecWin} />
-				</div>
-			</div>
-		</section>
+			</section>
+		</Draggable>
 	);
 }
 
