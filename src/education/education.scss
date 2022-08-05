@@ -5,15 +5,17 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	height: 80%;
-	width: 65%;
-	max-width: 850px;
-	max-height: 950px;
-	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+	padding: 3px;
+	min-width: 700px;
+	min-height: 700px;
+	background-color: #c0c6ca;
+	box-shadow: inset -0.1em -0.1em 0.04em 0 rgba(32, 33, 32, 0.7),
+		inset 0.1em 0.1em 0.1em 0 rgba(239, 241, 241, 1),
+		rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
 	@media screen and (max-width: $phone) {
-		width: 95%;
-		top: 41%;
+		min-width: 95%;
+		height: 65%;
 	}
 
 	&.close {
@@ -21,12 +23,13 @@
 	}
 
 	.education-container {
-		box-sizing: border-box;
 		width: 100%;
-		height: 100%;
+		min-height: 700px;
 		background-color: #c0c6ca;
-		border: 3px solid #c6c7c7;
-		margin: 0 auto;
+
+		@media screen and (max-width: $phone) {
+			height: 100%;
+		}
 
 		.title-bar {
 			display: grid;
@@ -90,22 +93,28 @@
 
 		.divider {
 			display: block;
-			height: 3px;
+			height: 1px;
 			width: 100%;
+			margin: 1px auto;
 			background-color: #c0c6ca;
 			box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);
 		}
 
 		.content-container {
 			width: 100%;
-			height: calc(100% - 23px);
-			background-color: #c6c7c7;
+			min-height: 680px;
 			display: flex;
 			justify-content: center;
+			align-items: center;
+			overflow-y: scroll;
+
+			@media screen and (max-width: $phone) {
+				height: 100%;
+			}
 
 			.school-list {
 				width: 85%;
-				height: 100%;
+				min-height: 680px;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
@@ -113,11 +122,14 @@
 
 				@media screen and (max-width: $phone) {
 					width: 95%;
+					height: 100%;
 					justify-content: flex-start;
+					overflow-y: scroll;
+					margin: 20px 0;
 				}
 
 				.school-item {
-					height: 25%;
+					min-height: 170px;
 					width: 100%;
 					display: grid;
 					grid-template-columns: 30% 1fr;
@@ -149,7 +161,7 @@
 
 					h4 {
 						justify-self: center;
-						font-size: 1.5rem;
+						font-size: 1.7rem;
 						grid-column-start: 2;
 						margin: 10px 0;
 					}
@@ -165,7 +177,8 @@
 					p {
 						justify-self: center;
 						margin: 5px 0;
-						font-size: 1rem;
+						font-size: 1.2rem;
+						text-align: center;
 					}
 				}
 			}

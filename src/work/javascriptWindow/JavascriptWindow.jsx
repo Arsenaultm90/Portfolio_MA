@@ -83,44 +83,46 @@ function JavascriptWindow({ secWin, setSecWin }) {
 		<section
 			className={'js-window ' + (secWin.target === 'vanilla' ? 'open' : '')}
 		>
-			<div className='back-bar'>
-				<button className='back-btn' onClick={backBtnClicked}>
-					Back
-				</button>
-			</div>
-			<div className='content-container'>
-				<ul className='link-container'>
-					<li
-						className={
-							'link-item ' + `${state.active === 'wordle' ? 'active' : ''}`
-						}
-						id='wordle'
-						ref={refIcon}
-						onClick={clicked}
-						onDoubleClick={openWindow}
-					>
-						<img
-							src={state.active === 'wordle' ? wordle_highlight : wordleIcon}
-							alt=''
-						/>
-						<h4>Wordle Clone</h4>
-					</li>
-					<li
-						className={
-							'link-item ' + `${state.active === 'recipe' ? 'active' : ''}`
-						}
-						id='recipe'
-						ref={refIcon}
-						onClick={clicked}
-						onDoubleClick={openWindow}
-					>
-						<img
-							src={state.active === 'recipe' ? recipe_highlight : recipes}
-							alt=''
-						/>
-						<h4>Recipes API</h4>
-					</li>
-				</ul>
+			<div className='js-container'>
+				<div className='back-bar'>
+					<button className='back-btn' onClick={backBtnClicked}>
+						Back
+					</button>
+				</div>
+				<div className='jscontent-container'>
+					<ul className='link-container'>
+						<li
+							className={
+								'link-item ' + `${state.active === 'wordle' ? 'active' : ''}`
+							}
+							id='wordle'
+							ref={refIcon}
+							onClick={clicked}
+							onDoubleClick={openWindow}
+						>
+							<img
+								src={state.active === 'wordle' ? wordle_highlight : wordleIcon}
+								alt=''
+							/>
+							<h4>Wordle Clone</h4>
+						</li>
+						<li
+							className={
+								'link-item ' + `${state.active === 'recipe' ? 'active' : ''}`
+							}
+							id='recipe'
+							ref={refIcon}
+							onClick={clicked}
+							onDoubleClick={openWindow}
+						>
+							<img
+								src={state.active === 'recipe' ? recipe_highlight : recipes}
+								alt=''
+							/>
+							<h4>Recipes API</h4>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</section>
 	);
