@@ -130,7 +130,7 @@ function Work({ winState, setWinState, winLocation, setWinLocation }) {
 								}
 								id='NodeJS'
 								ref={refIcon}
-								onClick={clicked}
+								// onClick={clicked}
 							>
 								<img
 									src={

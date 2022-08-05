@@ -1,6 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import './reactwindow.scss';
-import { movieAPI, movieAPI_highlight } from '../../images/index';
+import {
+	movieAPI,
+	movieAPI_highlight,
+	pickleWars,
+	pickleWars_highlight,
+} from '../../images/index';
 
 function ReactWindow({ secWin, setSecWin }) {
 	// Check if clicked outside the target. Remove highlight if True
@@ -38,6 +43,13 @@ function ReactWindow({ secWin, setSecWin }) {
 					);
 					break;
 
+				case 'pickleWars':
+					window.open(
+						'https://the-awesome-arsenaultm90-site.netlify.app',
+						'_blank'
+					);
+					break;
+
 				default:
 					break;
 			}
@@ -53,6 +65,13 @@ function ReactWindow({ secWin, setSecWin }) {
 		switch (e.currentTarget.id) {
 			case 'movieAPI':
 				window.open('https://isnt-arsenaultm90-awesome.netlify.app', '_blank');
+				break;
+
+			case 'pickleWars':
+				window.open(
+					'https://the-awesome-arsenaultm90-site.netlify.app',
+					'_blank'
+				);
 				break;
 
 			default:
@@ -85,6 +104,25 @@ function ReactWindow({ secWin, setSecWin }) {
 							alt=''
 						/>
 						<h4>Movie Search API</h4>
+					</li>
+					<li
+						className={
+							'link-item ' + `${state.active === 'pickleWars' ? 'active' : ''}`
+						}
+						id='pickleWars'
+						ref={refIcon}
+						onClick={clicked}
+						onDoubleClick={openWindow}
+					>
+						<img
+							src={
+								state.active === 'pickleWars'
+									? pickleWars_highlight
+									: pickleWars
+							}
+							alt=''
+						/>
+						<h4>Pickle Wars</h4>
 					</li>
 				</ul>
 			</div>
