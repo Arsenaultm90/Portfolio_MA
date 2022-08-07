@@ -1,36 +1,38 @@
 @import '../global.scss';
 
-.work {
+.js-window {
 	position: absolute;
-	display: flex;
-	justify-content: center;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	padding: 3px;
-	min-width: 650px;
-	min-height: 550px;
+	min-width: 647px;
+	min-height: 547px;
 	background-color: #c0c6ca;
 	box-shadow: inset -0.1em -0.1em 0.04em 0 rgba(32, 33, 32, 0.7),
 		inset 0.1em 0.1em 0.1em 0 rgba(239, 241, 241, 1),
 		rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+	display: none;
 
-	@media screen and (max-width: $phone) {
-		min-width: 95%;
-		height: 80%;
+	&.open {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@media screen and (max-width: $phone) {
+			min-width: 95%;
+			height: 80%;
+		}
 	}
 
-	&.close {
-		display: none;
-	}
-
-	.work-container {
+	.js-container {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
-		min-height: 550px;
+		justify-content: flex-start;
+		height: 100%;
 		min-width: 650px;
+		min-height: 550px;
 
 		@media screen and (max-width: $phone) {
 			min-width: 100%;
@@ -103,63 +105,58 @@
 			box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);
 		}
 
-		.content-container {
-			min-height: 530px;
-			min-width: 650px;
-			background-color: rgba(239, 241, 241, 1);
+		.back-bar {
+			width: 100%;
+			height: 30px;
+			background-color: #c7c7c7;
+			display: flex;
+			align-items: center;
+
+			.back-btn {
+				height: 20px;
+				width: 50px;
+				margin-left: 3px;
+				border: none;
+				color: black;
+				background-color: #c7c7c7;
+				box-shadow: inset 0.1em 0.1em 0em 0 rgba(255, 255, 255, 0.5),
+					inset -0.1em -0.1em 0em 0 rgba(0, 0, 0, 0.8);
+			}
+		}
+
+		.jscontent-container {
+			height: 517px;
+			width: 100%;
+			background-color: white;
 			box-shadow: inset 0.2em 0.15em 0em 0 rgba(0, 0, 0, 0.7),
 				inset -0.1em -0.1em 0em 0 rgba(255, 255, 255, 0.5);
 
 			@media screen and (max-width: $phone) {
-				min-width: 100%;
 				height: 100%;
-				overflow-y: scroll;
 			}
 
 			.link-container {
 				height: 100%;
 				width: 100%;
 				display: flex;
-				flex-wrap: wrap;
 				justify-content: space-evenly;
 				align-items: center;
 
-				&.hide {
-					display: none;
+				@media screen and (max-width: $phone) {
+					flex-direction: column;
 				}
 
 				.link-item {
-					display: flex;
-					align-items: center;
-					flex-direction: column;
-					margin: 5px 0px;
-					flex: 0 50%;
-
-					@media screen and (max-width: $phone) {
-						margin: 10px 5px;
-					}
-
-					&.active {
-						h4 {
-							background-color: #000181;
-							color: white;
-						}
-					}
-
-					h4 {
-						font-size: 2rem;
-						padding: 3px;
-						text-align: center;
-					}
+					cursor: pointer;
 
 					img {
 						width: 150px;
 						height: 150px;
-
-						@media screen and (max-width: $phone) {
-							width: 150px;
-							height: 150px;
-						}
+					}
+					h4 {
+						text-align: center;
+						margin: 10px 0;
+						font-size: 2rem;
 					}
 				}
 			}

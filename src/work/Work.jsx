@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import ReactWindow from './react/ReactWindow';
-import JavascriptWindow from './javascriptWindow/JavascriptWindow';
 import './work.scss';
 import {
 	work,
@@ -13,8 +11,7 @@ import {
 	nodeIcon_highlight,
 } from '../images/index';
 
-function Work({ winState, setWinState, winLocation, setWinLocation }) {
-	const [secWin, setSecWin] = useState({ target: '' });
+function Work({ winState, setWinState }) {
 	const [state, setState] = useState({ active: '' });
 	const refIcon = useRef(null);
 
@@ -46,26 +43,31 @@ function Work({ winState, setWinState, winLocation, setWinLocation }) {
 			navigator.userAgent.match(/BlackBerry/i) ||
 			navigator.userAgent.match(/Windows Phone/i)
 		) {
-			setSecWin({ target: e.currentTarget.id });
-			setState({ active: '' });
+			e.currentTarget.id === 'vanilla'
+				? setWinState({ projects: false, jsWin: true })
+				: e.currentTarget.id === 'react'
+				? setWinState({ projects: false, reactWin: true })
+				: console.log('nothing clicked');
 		}
 	};
 
 	// Close the window(component) if the X button is clicked
 	const handleClose = () => {
 		setWinState({ projects: false });
-		setSecWin({ target: '' });
 	};
 
 	const dblClicked = (e) => {
-		const targetClick = e.currentTarget.id;
-		setSecWin({ target: targetClick });
+		e.currentTarget.id === 'vanilla'
+			? setWinState({ projects: false, jsWin: true })
+			: e.currentTarget.id === 'react'
+			? setWinState({ projects: false, reactWin: true })
+			: console.log('What was clicked?');
 	};
 
 	return (
 		<section className={'work ' + (!winState.projects && 'close')} id='work'>
 			<div className='work-container'>
-				<div className='title-bar' id='handle'>
+				<div className='title-bar'>
 					<div className='left-side'>
 						<img src={work} alt='' />
 						<h4>Projects</h4>
@@ -78,7 +80,7 @@ function Work({ winState, setWinState, winLocation, setWinLocation }) {
 				</div>
 				<span className='divider'></span>
 				<div className='content-container'>
-					<ul className={'link-container ' + (secWin.target !== '' && 'hide')}>
+					<ul className='link-container '>
 						<li
 							className={
 								'link-item ' + `${state.active === 'vanilla' ? 'active' : ''}`
@@ -124,8 +126,6 @@ function Work({ winState, setWinState, winLocation, setWinLocation }) {
 							<h4>Node JS (In Progress)</h4>
 						</li>
 					</ul>
-					<ReactWindow secWin={secWin} setSecWin={setSecWin} />
-					<JavascriptWindow secWin={secWin} setSecWin={setSecWin} />
 				</div>
 			</div>
 		</section>

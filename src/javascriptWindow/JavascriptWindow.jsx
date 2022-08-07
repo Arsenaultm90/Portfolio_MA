@@ -1,18 +1,21 @@
 import { useState, useEffect, useRef } from 'react';
 import './javascriptwindow.scss';
 import {
-	reactIcon,
-	reactIcon_highlight,
 	wordleIcon,
 	wordle_highlight,
 	recipes,
 	recipe_highlight,
-} from '../../images/index';
+	closeBtn,
+	work,
+} from '../images/index';
 
-function JavascriptWindow({ secWin, setSecWin }) {
+function JavascriptWindow({ winState, setWinState }) {
 	// Check if clicked outside the target. Remove highlight if True
 	useEffect(() => {
 		document.addEventListener('click', handleClickOutside, true);
+		return () => {
+			document.removeEventListener('click', handleClickOutside, true);
+		};
 	});
 
 	const refIcon = useRef(null);
@@ -22,10 +25,16 @@ function JavascriptWindow({ secWin, setSecWin }) {
 		}
 	};
 
-	// Check if target is clicked. If True then add thee 'active' class to highlight
+	// Close the window(component) if the X button is clicked
+	const handleClose = () => {
+		setWinState({ jsWin: false });
+	};
+
+	// Check if target is clicked. If True then add the 'active' class to highlight
 	const [state, setState] = useState({ active: '' });
 
 	const clicked = (e) => {
+		console.log('clicked');
 		const clicked = e.currentTarget.id;
 		setState({ active: clicked });
 		if (
@@ -76,14 +85,24 @@ function JavascriptWindow({ secWin, setSecWin }) {
 	};
 
 	const backBtnClicked = () => {
-		setSecWin({ target: '' });
+		setWinState({ projects: true, jsWin: false });
 	};
 
 	return (
-		<section
-			className={'js-window ' + (secWin.target === 'vanilla' ? 'open' : '')}
-		>
+		<section className={'js-window ' + (winState.jsWin && 'open')}>
 			<div className='js-container'>
+				<div className='title-bar'>
+					<div className='left-side'>
+						<img src={work} alt='' />
+						<h4>Projects</h4>
+					</div>
+					<div className='right-side'>
+						<button className='close-btn' onClick={handleClose}>
+							<img src={closeBtn} alt='' />
+						</button>
+					</div>
+				</div>
+				<span className='divider'></span>
 				<div className='back-bar'>
 					<button className='back-btn' onClick={backBtnClicked}>
 						Back
