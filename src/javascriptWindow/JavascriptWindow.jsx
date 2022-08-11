@@ -62,6 +62,11 @@ function JavascriptWindow({ winState, setWinState }) {
 					setState({ active: '' });
 					break;
 
+				case 'design-examples':
+					window.open('https://frontend-examples.netlify.app/', '_blank');
+					setState({ active: '' });
+					break;
+
 				default:
 					break;
 			}

@@ -18,6 +18,7 @@
 	@media screen and (max-width: $phone) {
 		min-width: 95%;
 		height: 80%;
+		top: 45%;
 	}
 
 	&.close {
@@ -123,6 +124,7 @@
 				flex-wrap: wrap;
 				justify-content: space-evenly;
 				align-items: center;
+				overflow-y: scroll;
 
 				&.hide {
 					display: none;
