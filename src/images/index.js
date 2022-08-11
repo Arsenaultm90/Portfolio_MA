@@ -29,6 +29,8 @@ import movieAPI from './movieAPI.png';
 import movieAPI_highlight from './movieAPI_highlight.png';
 import pickleWars from './pickleWars.png';
 import pickleWars_highlight from './pickleWars_highlight.png';
+import frontendExample from './frontendExample.png';
+import frontendExample_highlight from './frontendExample_highlight.png';
 
 export {
 	work,
@@ -62,4 +64,6 @@ export {
 	movieAPI_highlight,
 	pickleWars,
 	pickleWars_highlight,
+	frontendExample,
+	frontendExample_highlight,
 };

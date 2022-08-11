@@ -148,6 +148,12 @@
 
 				.link-item {
 					cursor: pointer;
+					text-align: center;
+					width: 33%;
+
+					@media screen and (max-width: $phone) {
+						width: 100%;
+					}
 
 					img {
 						width: 150px;

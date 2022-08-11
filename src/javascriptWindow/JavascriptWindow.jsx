@@ -5,6 +5,8 @@ import {
 	wordle_highlight,
 	recipes,
 	recipe_highlight,
+	frontendExample,
+	frontendExample_highlight,
 	closeBtn,
 	work,
 } from '../images/index';
@@ -79,6 +81,10 @@ function JavascriptWindow({ winState, setWinState }) {
 				);
 				break;
 
+			case 'design-examples':
+				window.open('https://frontend-examples.netlify.app/', '_blank');
+				break;
+
 			default:
 				break;
 		}
@@ -139,6 +145,26 @@ function JavascriptWindow({ winState, setWinState }) {
 								alt=''
 							/>
 							<h4>Recipes API</h4>
+						</li>
+						<li
+							className={
+								'link-item ' +
+								`${state.active === 'design-examples' ? 'active' : ''}`
+							}
+							id='design-examples'
+							ref={refIcon}
+							onClick={clicked}
+							onDoubleClick={openWindow}
+						>
+							<img
+								src={
+									state.active === 'design-examples'
+										? frontendExample_highlight
+										: frontendExample
+								}
+								alt=''
+							/>
+							<h4>Design Examples</h4>
 						</li>
 					</ul>
 				</div>
