@@ -7,7 +7,6 @@
 	transform: translate(-50%, -50%);
 	padding: 3px;
 	min-width: 700px;
-	min-height: 700px;
 	background-color: #c0c6ca;
 	box-shadow: inset -0.1em -0.1em 0.04em 0 rgba(32, 33, 32, 0.7),
 		inset 0.1em 0.1em 0.1em 0 rgba(239, 241, 241, 1),
@@ -16,8 +15,7 @@
 	@media screen and (max-width: $phone) {
 		top: 45%;
 		min-width: 95%;
-		min-height: 550px;
-		max-height: 65%;
+		max-height: 85%;
 	}
 
 	&.close {
@@ -26,13 +24,7 @@
 
 	.education-container {
 		width: 100%;
-		min-height: 700px;
 		background-color: #c0c6ca;
-
-		@media screen and (max-width: $phone) {
-			min-height: 500px;
-			max-height: 550px;
-		}
 
 		.title-bar {
 			display: grid;
@@ -105,19 +97,12 @@
 
 		.content-container {
 			width: 100%;
-			min-height: 680px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 
-			@media screen and (max-width: $phone) {
-				min-height: 530px;
-				max-height: 886px;
-			}
-
 			.school-list {
 				width: 85%;
-				min-height: 680px;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
@@ -125,16 +110,16 @@
 
 				@media screen and (max-width: $phone) {
 					width: 95%;
-					height: 886px;
+					max-height: 100%;
 					overflow-y: scroll;
 				}
 
 				.school-item {
-					min-height: 170px;
 					width: 100%;
+					min-height: 150px;
 					display: grid;
 					grid-template-columns: 30% 1fr;
-					padding: 5px;
+					margin-block: 20px;
 					background-color: #f0f0f0;
 					box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
 						rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -142,8 +127,6 @@
 					@media screen and (max-width: $phone) {
 						display: flex;
 						flex-direction: column;
-						margin: 10px 0;
-						flex-shrink: 0;
 					}
 
 					.text-container {
@@ -151,12 +134,7 @@
 						flex-direction: column;
 						justify-content: center;
 						align-items: center;
-
-						@media screen and (max-width: $phone) {
-							height: fit-content;
-							margin: 0 5px;
-							text-align: center;
-						}
+						text-align: center;
 					}
 
 					h4 {
@@ -172,6 +150,10 @@
 						align-self: center;
 						box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
 							rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+						@media screen and (max-width: $phone) {
+							margin-block: 10px;
+						}
 					}
 
 					p {
