@@ -15,7 +15,8 @@
 	@media screen and (max-width: $phone) {
 		top: 45%;
 		min-width: 95%;
-		max-height: 85%;
+		min-height: 500px;
+		height: 75%;
 	}
 
 	&.close {
@@ -25,6 +26,10 @@
 	.education-container {
 		width: 100%;
 		background-color: #c0c6ca;
+
+		@media screen and (max-width: $phone) {
+			height: 100%;
+		}
 
 		.title-bar {
 			display: grid;
@@ -101,6 +106,13 @@
 			justify-content: center;
 			align-items: center;
 
+			@media screen and (max-width: $phone) {
+				max-height: calc(100% - 25px);
+				height: auto;
+				overflow-y: auto;
+				align-items: flex-start;
+			}
+
 			.school-list {
 				width: 85%;
 				display: flex;
@@ -110,8 +122,6 @@
 
 				@media screen and (max-width: $phone) {
 					width: 95%;
-					max-height: 100%;
-					overflow-y: scroll;
 				}
 
 				.school-item {
