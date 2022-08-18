@@ -1,0 +1,217 @@
+@import '../../global.scss';
+
+.user {
+	display: none;
+	position: absolute;
+	padding: 3px;
+	min-width: 450px;
+	min-height: 500px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #c0c6ca;
+	box-shadow: inset -0.1em -0.1em 0.04em 0 rgba(32, 33, 32, 0.7),
+		inset 0.1em 0.1em 0.1em 0 rgba(239, 241, 241, 1),
+		rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+	&.active {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	//Phone Media Query
+	@media screen and (max-width: $phone) {
+		min-width: 95%;
+		height: 75%;
+		top: 45%;
+	}
+
+	.user-container {
+		width: 100%;
+		min-height: 500px;
+		background-color: #c0c6ca;
+
+		@media screen and (max-width: $phone) {
+			height: 100%;
+		}
+
+		.title-bar {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			width: 100%;
+			height: 20px;
+			margin: 0 auto;
+			background: linear-gradient(
+				90deg,
+				rgba(6, 0, 80, 1) 0%,
+				rgba(13, 137, 219, 1) 100%
+			);
+
+			.left-side {
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+
+				img {
+					grid-column-start: 1;
+					margin: 0 5px;
+					width: 17px;
+					height: 17px;
+				}
+
+				h4 {
+					color: white;
+					font-size: 14px;
+				}
+			}
+
+			.right-side {
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+
+				button {
+					width: 18px;
+					height: 80%;
+					background-color: #b7b6b7;
+					margin-right: 2px;
+					border: none;
+					margin-left: 5px;
+					box-shadow: inset -0.1em -0.1em 0.04em 0 rgba(32, 33, 32, 0.7),
+						inset 0.1em 0.1em 0.1em 0 rgba(239, 241, 241, 1);
+					overflow-y: hidden;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					img {
+						width: 80%;
+						height: 80%;
+					}
+				}
+			}
+		}
+
+		.divider {
+			display: block;
+			height: 1px;
+			width: 100%;
+			margin: 1px auto;
+			background-color: #c0c6ca;
+			box-shadow: 0px 0.5px 1px 0px rgba(0, 0, 0, 0.75);
+		}
+
+		.content-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			min-height: 480px;
+			padding: 20px 0;
+			background-color: #c0c6ca;
+			box-shadow: inset -0.1em -0.1em 0.04em 0 rgba(32, 33, 32, 0.7),
+				inset 0.1em 0.1em 0.1em 0 rgba(239, 241, 241, 1);
+
+			@media screen and (max-width: $phone) {
+				max-height: calc(100% - 21px);
+				display: flex;
+				flex-direction: column;
+				padding: 0;
+				overflow-y: auto;
+			}
+
+			.left {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 50%;
+				margin: auto 0;
+
+				@media screen and (max-width: $phone) {
+					min-height: 160px;
+					margin-bottom: 5px;
+				}
+
+				img {
+					width: 95%;
+					height: auto;
+
+					@media screen and (max-width: $phone) {
+						width: 150px;
+						height: 150px;
+					}
+				}
+			}
+
+			.right {
+				display: flex;
+				flex-direction: column;
+				margin: auto 0;
+				height: 90%;
+				border-left: 1px solid black;
+				overflow-y: scroll;
+
+				@media screen and (max-width: $phone) {
+					border: none;
+					height: 50%;
+				}
+
+				.info-container {
+					margin: 0 10px;
+					overflow-y: scroll;
+
+					.status {
+						margin-bottom: 50px;
+						h4 {
+							font-size: clamp(1.2rem, 1.3rem, 1.5rem);
+							margin: 5px 0;
+						}
+
+						@media screen and (max-width: $phone) {
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
+							align-items: center;
+							margin-bottom: 30px;
+						}
+					}
+
+					.bio {
+						margin-bottom: 50px;
+						h4 {
+							font-size: clamp(1.2rem, 1.3rem, 1.5rem);
+						}
+
+						p {
+							margin: 10px 0;
+							font-size: clamp(1.2rem, 1.3rem, 1.5rem);
+						}
+					}
+
+					.skills {
+						display: flex;
+						flex-direction: column;
+						border-top: 1px solid black;
+						height: 50%;
+
+						h4 {
+							margin: 30px auto;
+							font-size: 1.5rem;
+						}
+
+						.skills-container {
+							display: flex;
+							justify-content: space-evenly;
+							flex-wrap: wrap;
+
+							@media screen and (max-width: $phone) {
+								justify-content: center;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

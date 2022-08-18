@@ -1,0 +1,241 @@
+@import '../../global.scss';
+
+.contact {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 3px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	min-width: 1050px;
+	min-height: 500px;
+	background-color: #c0c6ca;
+	box-shadow: inset -0.1em -0.1em 0.04em 0 rgba(32, 33, 32, 0.7),
+		inset 0.1em 0.1em 0.1em 0 rgba(239, 241, 241, 1),
+		rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+	@media screen and (max-width: $phone) {
+		height: 65%;
+		min-width: 95%;
+	}
+
+	&.close {
+		display: none;
+	}
+
+	.contact-container {
+		width: 100%;
+		min-height: 500px;
+		background-color: #c0c6ca;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		@media screen and (max-width: $phone) {
+			height: 100%;
+		}
+
+		.title-bar {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			width: 100%;
+			min-height: 20px;
+			margin: 0 auto;
+			background: linear-gradient(
+				90deg,
+				rgba(6, 0, 80, 1) 0%,
+				rgba(13, 137, 219, 1) 100%
+			);
+
+			.left-side {
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+
+				img {
+					grid-column-start: 1;
+					margin: 0 5px;
+					width: 17px;
+					height: 17px;
+				}
+
+				h4 {
+					color: white;
+					font-size: 14px;
+				}
+			}
+
+			.right-side {
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+
+				button {
+					position: relative;
+					width: 18px;
+					height: 80%;
+					background-color: #b7b6b7;
+					margin-right: 2px;
+					border: none;
+					margin-left: 5px;
+					box-shadow: inset 0.1em 0.1em 0em 0 rgba(255, 255, 255, 0.5),
+						inset -0.1em -0.1em 0em 0 rgba(0, 0, 0, 0.8);
+
+					img {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						width: 80%;
+						height: 80%;
+					}
+				}
+			}
+		}
+
+		.divider {
+			display: block;
+			height: 1px;
+			width: 100%;
+			margin: 1px auto;
+			background-color: #c0c6ca;
+			box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);
+		}
+
+		.input-container {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			min-height: 480px;
+			background-color: #c6c7c7;
+
+			@media screen and (max-width: $phone) {
+				height: 100%;
+			}
+
+			.contact-box {
+				width: 100%;
+				height: 100%;
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				justify-content: space-around;
+				align-items: center;
+				text-align: center;
+
+				@media screen and (max-width: $phone) {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+				}
+
+				.left {
+					height: 95%;
+					width: 95%;
+					align-self: center;
+					justify-self: center;
+					background: url('../../images/Ottawa.png') no-repeat center;
+					background-size: cover;
+					border: 1px solid black;
+
+					@media screen and (max-width: $phone) {
+						display: none;
+					}
+				}
+
+				.right {
+					display: flex;
+					flex-direction: column;
+					grid-column-start: 2;
+					margin: 0 auto;
+					height: 95%;
+					width: 95%;
+					align-content: center;
+					justify-content: center;
+					text-align: center;
+
+					p {
+						height: 25px;
+						margin: 0px auto;
+						font-size: 1.1rem;
+						line-height: 1.3rem;
+					}
+
+					h4 {
+						position: relative;
+						padding-bottom: 10px;
+						margin-bottom: 10px;
+						font-size: 2rem;
+
+						@media screen and (max-width: $phone) {
+							margin-bottom: 20px;
+						}
+
+						&:after {
+							content: '';
+							position: absolute;
+							left: 50%;
+							bottom: 0;
+							height: 2px;
+							width: 100px;
+							background-color: black;
+							transform: translate(-50%);
+							-webkit-transform: translate(-50%);
+							-moz-transform: translate(-50%);
+							-ms-transform: translate(-50%);
+							-o-transform: translate(-50%);
+						}
+					}
+
+					.field {
+						width: 80%;
+						height: 20px;
+						padding: 0.5rem 1rem;
+						background-color: rgba(250, 250, 250, 1);
+						font-size: 1.1rem;
+						outline: none;
+						border: none;
+						margin: 7px auto;
+						resize: none;
+						box-shadow: inset 0.14em 0.1em 0em 0 rgba(32, 33, 32, 0.7),
+							inset -0.14em -0.1em 0em 0 rgba(239, 241, 241, 255);
+
+						&.area {
+							min-height: 150px;
+						}
+					}
+
+					.submit-btn {
+						box-sizing: border-box;
+						height: 30px;
+						width: 75px;
+						line-height: 23px;
+						margin: 0.5rem auto;
+						font-size: 1.1rem;
+						cursor: pointer;
+						outline: none;
+						border: none;
+						background-color: #c6c7c7;
+						box-shadow: inset -0.14em -0.1em 0em 0 rgba(32, 33, 32, 0.7),
+							inset 0.14em 0.1em 0em 0 rgba(239, 241, 241, 255);
+
+						@media screen and (max-width: $phone) {
+							height: 40px;
+							font-size: 1.2rem;
+							color: black;
+						}
+
+						&:active {
+							box-shadow: inset 0.14em 0.1em 0em 0 rgba(32, 33, 32, 0.7),
+								inset -0.14em -0.1em 0em 0 rgba(239, 241, 241, 255);
+						}
+					}
+				}
+			}
+		}
+	}
+}

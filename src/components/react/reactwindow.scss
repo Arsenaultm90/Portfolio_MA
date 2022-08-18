@@ -1,0 +1,175 @@
+@import '../../global.scss';
+
+.react-window {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 3px;
+	min-width: 647px;
+	min-height: 547px;
+	background-color: #c0c6ca;
+	box-shadow: inset -0.1em -0.1em 0.04em 0 rgba(32, 33, 32, 0.7),
+		inset 0.1em 0.1em 0.1em 0 rgba(239, 241, 241, 1),
+		rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+	display: none;
+
+	&.open {
+		display: block;
+	}
+
+	@media screen and (max-width: $phone) {
+		min-width: 0;
+		width: 95%;
+		min-height: 0;
+		max-height: 500px;
+		top: 45%;
+	}
+
+	.reactWin-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		height: 100%;
+		min-width: 650px;
+		min-height: 550px;
+
+		@media screen and (max-width: $phone) {
+			min-width: 100%;
+			min-height: 0;
+			height: 500px;
+		}
+
+		.title-bar {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			width: 100%;
+			min-height: 20px;
+			background: linear-gradient(
+				90deg,
+				rgba(6, 0, 80, 1) 0%,
+				rgba(13, 137, 219, 1) 100%
+			);
+
+			.left-side {
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+
+				img {
+					grid-column-start: 1;
+					margin: 0 5px;
+					width: 17px;
+					height: 17px;
+				}
+
+				h4 {
+					color: white;
+					font-size: 14px;
+				}
+			}
+
+			.right-side {
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+
+				button {
+					position: relative;
+					width: 18px;
+					height: 80%;
+					background-color: #b7b6b7;
+					margin-right: 2px;
+					border: none;
+					margin-left: 5px;
+					box-shadow: inset 0.1em 0.1em 0em 0 rgba(255, 255, 255, 0.5),
+						inset -0.1em -0.1em 0em 0 rgba(0, 0, 0, 0.8);
+
+					img {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						width: 12px;
+						height: 12px;
+						margin-right: 1px;
+					}
+				}
+			}
+		}
+
+		.divider {
+			display: block;
+			height: 2px;
+			width: 100%;
+			background-color: #c0c6ca;
+			box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);
+		}
+
+		.back-bar {
+			width: 100%;
+			min-height: 30px;
+			background-color: #c7c7c7;
+			box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);
+			display: flex;
+			align-items: center;
+
+			.back-btn {
+				height: 20px;
+				width: 50px;
+				margin-left: 3px;
+				border: none;
+				color: black;
+				background-color: #c7c7c7;
+				box-shadow: inset 0.1em 0.1em 0em 0 rgba(255, 255, 255, 0.5),
+					inset -0.1em -0.1em 0em 0 rgba(0, 0, 0, 0.8);
+			}
+		}
+
+		.content-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-start;
+			height: 100%;
+			width: 100%;
+			min-height: 550px;
+			background-color: white;
+			box-shadow: inset 0.2em 0.15em 0em 0 rgba(0, 0, 0, 0.7),
+				inset -0.1em -0.1em 0em 0 rgba(255, 255, 255, 0.5);
+
+			@media screen and (max-width: $phone) {
+				min-height: 0;
+				height: 100%;
+				overflow-y: auto;
+			}
+
+			.link-container {
+				min-height: 550px;
+				width: 100%;
+				display: flex;
+				justify-content: space-evenly;
+				align-items: center;
+
+				@media screen and (max-width: $phone) {
+					flex-direction: column;
+				}
+
+				.link-item {
+					text-align: center;
+
+					img {
+						height: 150px;
+						width: 150px;
+					}
+
+					h4 {
+						margin: 10px 0;
+						font-size: 2rem;
+					}
+				}
+			}
+		}
+	}
+}
