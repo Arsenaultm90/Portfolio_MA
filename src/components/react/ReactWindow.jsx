@@ -4,8 +4,7 @@ import './reactwindow.scss';
 import {
 	movieAPI,
 	movieAPI_highlight,
-	pickleWars,
-	pickleWars_highlight,
+	planet,
 	closeBtn,
 	work,
 } from '../../images/index';
@@ -56,11 +55,8 @@ function ReactWindow() {
 					);
 					break;
 
-				case 'pickleWars':
-					window.open(
-						'https://the-awesome-arsenaultm90-site.netlify.app',
-						'_blank'
-					);
+				case 'planet':
+					window.open('https://banana-in-pajamas90.netlify.app/', '_blank');
 					break;
 
 				default:
@@ -80,11 +76,8 @@ function ReactWindow() {
 				window.open('https://isnt-arsenaultm90-awesome.netlify.app', '_blank');
 				break;
 
-			case 'pickleWars':
-				window.open(
-					'https://the-awesome-arsenaultm90-site.netlify.app',
-					'_blank'
-				);
+			case 'planet':
+				window.open('https://banana-in-pajamas90.netlify.app/', '_blank');
 				break;
 
 			default:
@@ -129,27 +122,19 @@ function ReactWindow() {
 								}
 								alt=''
 							/>
-							<h4>Movie Search API</h4>
+							<h4>Movie Search API</h4>˙
 						</li>
 						<li
 							className={
-								'link-item ' +
-								`${state.active === 'pickleWars' ? 'active' : ''}`
+								'link-item ' + `${state.active === 'planet' ? 'active' : ''}`
 							}
-							id='pickleWars'
+							id='planet'
 							ref={refIcon}
 							onClick={clicked}
 							onDoubleClick={openWindow}
 						>
-							<img
-								src={
-									state.active === 'pickleWars'
-										? pickleWars_highlight
-										: pickleWars
-								}
-								alt=''
-							/>
-							<h4>Pickle Wars</h4>
+							<img src={state.active === 'planet' ? planet : planet} alt='' />
+							<h4>Planet Info</h4>
 						</li>
 					</ul>
 				</div>

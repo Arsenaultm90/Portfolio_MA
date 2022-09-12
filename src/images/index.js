@@ -31,6 +31,7 @@ import pickleWars from './pickleWars.png';
 import pickleWars_highlight from './pickleWars_highlight.png';
 import frontendExample from './frontendExample.png';
 import frontendExample_highlight from './frontendExample_highlight.png';
+import planet from './planet_icon.png';
 
 export {
 	work,
@@ -66,4 +67,5 @@ export {
 	pickleWars_highlight,
 	frontendExample,
 	frontendExample_highlight,
+	planet,
 };
